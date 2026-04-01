@@ -119,6 +119,46 @@ nav.scrolled{border-bottom-color:rgba(0,0,0,.06)}
 .service-link:hover{gap:10px;color:var(--sage-deep)}
 .service-link .arrow{transition:transform .3s}
 .service-link:hover .arrow{transform:translateX(3px)}
+.service-detail-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-muted);text-decoration:none;margin-top:6px;position:relative;z-index:1;transition:all .3s;cursor:pointer;background:none;border:none;padding:0;font-family:'Manrope',sans-serif}
+.service-detail-btn:hover{color:var(--sage);gap:10px}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(28,38,34,.65);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--white);border-radius:8px;max-width:680px;width:100%;max-height:88vh;overflow-y:auto;position:relative;transform:translateY(24px);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-header{padding:40px 48px 24px;border-bottom:1px solid var(--cream-deep);position:sticky;top:0;background:var(--white);z-index:2}
+.modal-eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--dark);letter-spacing:-.02em}
+.modal-close{position:absolute;top:20px;right:24px;background:none;border:none;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-light);font-size:20px;transition:all .3s}
+.modal-close:hover{background:var(--cream);color:var(--dark)}
+.modal-body{padding:32px 48px 48px}
+.modal-intro{font-size:15px;color:var(--text-light);line-height:1.8;margin-bottom:32px}
+.modal-section{margin-bottom:28px}
+.modal-section-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--cream-deep)}
+.modal-checklist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.modal-checklist li{font-size:13px;color:var(--text);line-height:1.6;display:flex;align-items:flex-start;gap:8px}
+.modal-checklist li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sage-muted);flex-shrink:0;margin-top:6px}
+.modal-note{margin-top:24px;padding:16px 20px;background:var(--cream);border-radius:4px;border-left:3px solid var(--gold-soft)}
+.modal-note p{font-size:13px;color:var(--text);line-height:1.7}
+.modal-note strong{color:var(--dark)}
+.modal-cta{margin-top:32px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.modal-btn-fill{padding:14px 32px;background:var(--dark);color:#fff;border:none;border-radius:100px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .4s}
+.modal-btn-fill:hover{background:var(--sage)}
+.modal-btn-ghost{padding:13px 28px;background:transparent;color:var(--dark);border:1.5px solid var(--dark);border-radius:100px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .4s}
+.modal-btn-ghost:hover{background:var(--dark);color:#fff}
+@media(max-width:600px){.modal-checklist{grid-template-columns:1fr}.modal-header,.modal-body{padding-left:24px;padding-right:24px}}
+
+.video-section{padding:100px 48px;background:var(--dark);position:relative;overflow:hidden}
+.video-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(61,107,94,.15) 0%,transparent 60%)}
+.video-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.video-content .section-eyebrow{color:var(--gold-soft)}
+.video-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;color:#fff;letter-spacing:-.02em;margin-bottom:16px;line-height:1.15}
+.video-content h2 strong{font-weight:700}
+.video-content p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.85;margin-bottom:32px}
+.video-wrap{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:9/16;max-width:320px;background:var(--sage-deep);box-shadow:0 32px 80px rgba(0,0,0,.4)}
+.video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:900px){.video-inner{grid-template-columns:1fr;gap:40px}.video-wrap{max-width:360px;margin:0 auto}.video-section{padding:80px 24px}}
+@media(max-width:600px){.video-wrap{max-width:100%}}
 
 .results{padding:120px 48px;background:var(--cream);position:relative;overflow:hidden}
 .results::before{content:'The Proof';position:absolute;top:40px;right:60px;font-family:'Cormorant Garamond',serif;font-size:140px;font-weight:300;color:var(--cream-deep);opacity:.5;line-height:1;pointer-events:none;letter-spacing:-.04em}
@@ -257,7 +297,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <body>
 <nav id="nav">
 <a href="#" class="nav-brand"><div class="nav-mark"><span>ADV</span></div><span class="nav-wordmark">ADVanced</span></a>
-<div class="nav-links" id="navLinks"><a href="#services">Services</a><a href="#results">Results</a><a href="#story">Story</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta-link">Get a Quote</a></div>
+<div class="nav-links" id="navLinks"><a href="#services">Services</a><a href="#results">Results</a><a href="#video">Our Work</a><a href="#story">Story</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta-link">Get a Quote</a></div>
 <button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
 </nav>
 
@@ -299,11 +339,11 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <p>Every space gets the same standard of care. Homes and offices, one company, no compromises.</p>
 </div>
 <div class="services-track">
-<div class="service-card reveal d1"><div class="service-idx">01</div><div class="service-line"></div><h3>Deep Cleaning</h3><p>The details you don&rsquo;t have time for. Baseboards, grout, fixtures, under and behind&mdash;every surface, every corner.</p><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d2"><div class="service-idx">02</div><div class="service-line"></div><h3>Basic Cleaning</h3><p>Recurring upkeep. Your space stays fresh and presentable without you thinking about it.</p><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d3"><div class="service-idx">03</div><div class="service-line"></div><h3>Commercial</h3><p>Offices, retail, shared spaces. A professional standard your clients and team will notice immediately.</p><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d4"><div class="service-idx">04</div><div class="service-line"></div><h3>Post-Construction</h3><p>Renovation dust, debris, residue. We make the space actually ready&mdash;not almost ready.</p><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d5"><div class="service-idx">05</div><div class="service-line"></div><h3>Move-In / Out</h3><p>Start fresh or leave it perfect. A thorough clean for the transitions that matter.</p><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
+<div class="service-card reveal d1"><div class="service-idx">01</div><div class="service-line"></div><h3>Deep Cleaning</h3><p>The details you don&rsquo;t have time for. Baseboards, grout, fixtures, under and behind&mdash;every surface, every corner.</p><button class="service-detail-btn" onclick="openModal('deep')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
+<div class="service-card reveal d2"><div class="service-idx">02</div><div class="service-line"></div><h3>Basic Cleaning</h3><p>Recurring upkeep. Your space stays fresh and presentable without you thinking about it.</p><button class="service-detail-btn" onclick="openModal('basic')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
+<div class="service-card reveal d3"><div class="service-idx">03</div><div class="service-line"></div><h3>Commercial</h3><p>Offices, retail, shared spaces. A professional standard your clients and team will notice immediately.</p><button class="service-detail-btn" onclick="openModal('commercial')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
+<div class="service-card reveal d4"><div class="service-idx">04</div><div class="service-line"></div><h3>Post-Construction</h3><p>Renovation dust, debris, residue. We make the space actually ready&mdash;not almost ready.</p><button class="service-detail-btn" onclick="openModal('postconstruction')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
+<div class="service-card reveal d5"><div class="service-idx">05</div><div class="service-line"></div><h3>Move-In / Out</h3><p>Start fresh or leave it perfect. A thorough clean for the transitions that matter.</p><button class="service-detail-btn" onclick="openModal('moveinout')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
 </div>
 </div>
 </section>
@@ -344,16 +384,16 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 </div>
 <div class="ba-card reveal d3">
 <div class="ba-images">
-<div class="ba-img" style="background:var(--cream-deep);">
-<div class="ba-placeholder"><div class="ba-placeholder-icon">&#9723;</div><span>More Coming</span></div>
+<div class="ba-img">
+<img src="images/movein-before.jpg" alt="Home before move-in clean" loading="lazy">
 <div class="ba-label before">Before</div>
 </div>
-<div class="ba-img" style="background:var(--cream);">
-<div class="ba-placeholder"><div class="ba-placeholder-icon">&#10024;</div><span>More Coming</span></div>
+<div class="ba-img">
+<img src="images/movein-after.jpg" alt="Home after move-in clean" loading="lazy">
 <div class="ba-label after">After</div>
 </div>
 </div>
-<div class="ba-caption"><span class="ba-caption-text">Post-Construction Cleanup</span><span class="ba-caption-type">Coming Soon</span></div>
+<div class="ba-caption"><span class="ba-caption-text">Move-In Whole Home</span><span class="ba-caption-type">Residential</span></div>
 </div>
 </div>
 </div>
@@ -431,6 +471,328 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 </div>
 </section>
 
+<section class="video-section" id="video">
+<div class="video-inner">
+<div class="video-content reveal">
+<div class="section-eyebrow">See Us in Action</div>
+<h2>Real work.<br><strong>Real results.</strong></h2>
+<p>This is what a full-home clean looks like when someone truly cares. Andrea brings this same energy and attention to detail to every single job&mdash;whether it&rsquo;s a studio apartment or a commercial suite.</p>
+<a href="#contact" class="modal-btn-fill" style="display:inline-flex;align-items:center;gap:8px;">Book Your Clean &rarr;</a>
+</div>
+<div class="video-wrap reveal d2">
+<video controls playsinline preload="metadata" poster="images/andrea.png">
+<source src="images/adv-work.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+</div>
+</div>
+</section>
+
+<!-- Service Modals -->
+<div class="modal-overlay" id="modal-deep" onclick="if(event.target===this)closeModal('deep')">
+<div class="modal">
+<div class="modal-header">
+<div class="modal-eyebrow">ADVanced Cleaning Services</div>
+<div class="modal-title">Deep Cleaning</div>
+<button class="modal-close" onclick="closeModal('deep')">&#10005;</button>
+</div>
+<div class="modal-body">
+<p class="modal-intro">Our Deep Clean is a thorough, top-to-bottom service designed for spaces that need a reset. We go beyond the surface&mdash;every corner, every fixture, every detail. Ideal as a first-time clean, seasonal refresh, or before/after a major event.</p>
+<div class="modal-section">
+<div class="modal-section-title">All Rooms</div>
+<ul class="modal-checklist">
+<li>Wipe down all cabinets and drawers</li>
+<li>Wipe down all blinds</li>
+<li>Wipe down doors and walls (where dirty)</li>
+<li>Hand wipe all baseboards</li>
+<li>Vacuum all sofas and upholstered furniture</li>
+<li>Dust and clean all ceiling fans</li>
+<li>Dust all light fixtures</li>
+<li>Clean all windowsills</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Kitchen &amp; Dining</div>
+<ul class="modal-checklist">
+<li>Clean and sanitize countertops</li>
+<li>Wipe down cabinets and drawers</li>
+<li>Clean sink and faucet</li>
+<li>Stove: clean top, front, and inside</li>
+<li>Oven: clean inside and outside</li>
+<li>Microwave: clean inside and outside</li>
+<li>Refrigerator: clean outside and handles</li>
+<li>Dishwasher: wipe down exterior</li>
+<li>Vacuum and mop floors</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Bathrooms</div>
+<ul class="modal-checklist">
+<li>Scrub and sanitize toilet (bowl, seat, base)</li>
+<li>Scrub shower/tub (tiles, grout, showerhead)</li>
+<li>Clean sink and faucet</li>
+<li>Wipe down mirrors</li>
+<li>Clean counters and surfaces</li>
+<li>Clean light fixtures</li>
+<li>Vacuum and mop floors</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Bedrooms &amp; Living Areas</div>
+<ul class="modal-checklist">
+<li>Dust and polish all surfaces</li>
+<li>Vacuum and mop floors</li>
+<li>Dust blinds or curtains</li>
+<li>Make beds (fresh linens if provided)</li>
+<li>Fluff and arrange cushions</li>
+<li>Vacuum sofas and chairs</li>
+</ul>
+</div>
+<div class="modal-note"><p><strong>Supplies included.</strong> Andrea brings all professional-grade cleaning products and equipment. You don&rsquo;t need to provide a thing.</p></div>
+<div class="modal-cta">
+<a href="#contact" class="modal-btn-fill" onclick="closeModal('deep')">Get a Free Quote</a>
+<a href="tel:+19189480071" class="modal-btn-ghost">Call (918) 948-0071</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal-basic" onclick="if(event.target===this)closeModal('basic')">
+<div class="modal">
+<div class="modal-header">
+<div class="modal-eyebrow">ADVanced Cleaning Services</div>
+<div class="modal-title">Basic Cleaning</div>
+<button class="modal-close" onclick="closeModal('basic')">&#10005;</button>
+</div>
+<div class="modal-body">
+<p class="modal-intro">Our Basic Clean is perfect for recurring maintenance&mdash;weekly, bi-weekly, or monthly. Your space stays consistently fresh without you having to think about it. Ideal for busy households and professionals.</p>
+<div class="modal-section">
+<div class="modal-section-title">Kitchen &amp; Dining Area</div>
+<ul class="modal-checklist">
+<li>Clean countertops</li>
+<li>Wipe down cabinets and drawers</li>
+<li>Clean sink and faucet</li>
+<li>Stove: clean top, front, and inside</li>
+<li>Oven: clean outside</li>
+<li>Microwave: clean inside and outside</li>
+<li>Refrigerator: clean outside</li>
+<li>Dishwasher: put dishes in dishwasher</li>
+<li>Vacuum and mop floors</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Living Room</div>
+<ul class="modal-checklist">
+<li>Dust surfaces (tables, shelves, etc.)</li>
+<li>Vacuum or sweep floors</li>
+<li>Clean windowsills</li>
+<li>Dust blinds or curtains</li>
+<li>Dust light fixtures</li>
+<li>Clean ceiling fans</li>
+<li>Fluff and arrange cushions</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Bathrooms</div>
+<ul class="modal-checklist">
+<li>Clean toilet (bowl, seat, and base)</li>
+<li>Scrub shower/tub (tiles, grout, showerhead)</li>
+<li>Clean sink and faucet</li>
+<li>Wipe down mirrors</li>
+<li>Clean counters</li>
+<li>Clean light fixtures</li>
+<li>Vacuum and mop floors</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Bedrooms</div>
+<ul class="modal-checklist">
+<li>Dust and polish surfaces</li>
+<li>Vacuum and mop floors</li>
+<li>Dust blinds or curtains</li>
+<li>Make bed</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Laundry Area</div>
+<ul class="modal-checklist">
+<li>Clean washer and dryer exterior</li>
+<li>Vacuum and mop floors</li>
+<li>Organize and straighten items</li>
+</ul>
+</div>
+<div class="modal-note"><p><strong>Consistency is the standard.</strong> Recurring clients receive the same cleaner every visit so Andrea learns your home and your preferences.</p></div>
+<div class="modal-cta">
+<a href="#contact" class="modal-btn-fill" onclick="closeModal('basic')">Get a Free Quote</a>
+<a href="tel:+19189480071" class="modal-btn-ghost">Call (918) 948-0071</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal-commercial" onclick="if(event.target===this)closeModal('commercial')">
+<div class="modal">
+<div class="modal-header">
+<div class="modal-eyebrow">ADVanced Cleaning Services</div>
+<div class="modal-title">Commercial Cleaning</div>
+<button class="modal-close" onclick="closeModal('commercial')">&#10005;</button>
+</div>
+<div class="modal-body">
+<p class="modal-intro">We clean offices, retail spaces, medical suites, restaurants, and shared commercial environments. Your clients and team will notice the difference. We work around your schedule&mdash;before hours, after hours, or weekends.</p>
+<div class="modal-section">
+<div class="modal-section-title">Common Areas &amp; Lobbies</div>
+<ul class="modal-checklist">
+<li>Dust and wipe all surfaces</li>
+<li>Vacuum and mop all floors</li>
+<li>Clean entrance glass and doors</li>
+<li>Empty and reline trash receptacles</li>
+<li>Wipe down furniture and fixtures</li>
+<li>Clean windowsills and ledges</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Offices &amp; Workspaces</div>
+<ul class="modal-checklist">
+<li>Dust desks, shelves, and equipment</li>
+<li>Wipe down keyboards and monitors (exterior)</li>
+<li>Vacuum carpets or mop hard floors</li>
+<li>Empty trash and recycling bins</li>
+<li>Clean interior glass and partitions</li>
+<li>Wipe baseboards and door frames</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Restrooms</div>
+<ul class="modal-checklist">
+<li>Sanitize toilets and urinals</li>
+<li>Clean sinks and faucets</li>
+<li>Restock paper products (if supplied)</li>
+<li>Wipe mirrors and fixtures</li>
+<li>Mop floors with disinfectant</li>
+<li>Empty trash</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Break Rooms &amp; Kitchens</div>
+<ul class="modal-checklist">
+<li>Wipe counters and appliance exteriors</li>
+<li>Clean sink and faucet</li>
+<li>Microwave: clean inside and outside</li>
+<li>Refrigerator: wipe exterior</li>
+<li>Empty trash and replace liners</li>
+<li>Mop floors</li>
+</ul>
+</div>
+<div class="modal-note"><p><strong>Bonded &amp; insured.</strong> All commercial clients receive a signed service agreement. We are fully bonded and insured for your protection and peace of mind.</p></div>
+<div class="modal-cta">
+<a href="#contact" class="modal-btn-fill" onclick="closeModal('commercial')">Request a Commercial Quote</a>
+<a href="tel:+19189480071" class="modal-btn-ghost">Call (918) 948-0071</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal-postconstruction" onclick="if(event.target===this)closeModal('postconstruction')">
+<div class="modal">
+<div class="modal-header">
+<div class="modal-eyebrow">ADVanced Cleaning Services</div>
+<div class="modal-title">Post-Construction Clean</div>
+<button class="modal-close" onclick="closeModal('postconstruction')">&#10005;</button>
+</div>
+<div class="modal-body">
+<p class="modal-intro">Construction and renovation leave behind fine dust, debris, adhesive residue, and grime that standard cleaning can&rsquo;t handle. Our post-construction clean makes the space truly move-in ready&mdash;not just presentable.</p>
+<div class="modal-section">
+<div class="modal-section-title">All Areas</div>
+<ul class="modal-checklist">
+<li>Remove all construction dust from surfaces</li>
+<li>Wipe down all cabinets, drawers, and shelving</li>
+<li>Clean all windows (interior) and window tracks</li>
+<li>Wipe down all doors, frames, and hardware</li>
+<li>Hand wipe all baseboards and trim</li>
+<li>Remove paint overspray and adhesive residue</li>
+<li>Vacuum all vents and registers</li>
+<li>Sweep, vacuum, and mop all floors</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Kitchen</div>
+<ul class="modal-checklist">
+<li>Clean inside all cabinets and drawers</li>
+<li>Clean all appliances inside and out</li>
+<li>Scrub sink and faucet</li>
+<li>Clean countertops and backsplash</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Bathrooms</div>
+<ul class="modal-checklist">
+<li>Scrub tile, grout, and fixtures</li>
+<li>Remove grout haze from tile surfaces</li>
+<li>Clean toilets, sinks, tubs, and showers</li>
+<li>Polish mirrors and glass</li>
+</ul>
+</div>
+<div class="modal-note"><p><strong>Custom quotes only.</strong> Post-construction pricing is based on square footage and scope. Contact us for a free on-site or phone estimate before booking.</p></div>
+<div class="modal-cta">
+<a href="#contact" class="modal-btn-fill" onclick="closeModal('postconstruction')">Get a Custom Quote</a>
+<a href="tel:+19189480071" class="modal-btn-ghost">Call (918) 948-0071</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="modal-moveinout" onclick="if(event.target===this)closeModal('moveinout')">
+<div class="modal">
+<div class="modal-header">
+<div class="modal-eyebrow">ADVanced Cleaning Services</div>
+<div class="modal-title">Move-In / Move-Out Clean</div>
+<button class="modal-close" onclick="closeModal('moveinout')">&#10005;</button>
+</div>
+<div class="modal-body">
+<p class="modal-intro">Moving is stressful. Your clean shouldn&rsquo;t be. Whether you&rsquo;re leaving a space spotless for the next tenant or starting fresh in your new home, we handle every detail so you don&rsquo;t have to.</p>
+<div class="modal-section">
+<div class="modal-section-title">Every Room</div>
+<ul class="modal-checklist">
+<li>Wipe down all cabinets inside and out</li>
+<li>Clean all closets and storage areas</li>
+<li>Wipe down all doors, frames, and handles</li>
+<li>Hand wipe all baseboards</li>
+<li>Clean all windowsills and tracks</li>
+<li>Dust and wipe all blinds</li>
+<li>Sweep, vacuum, and mop all floors</li>
+<li>Remove any remaining debris</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Kitchen</div>
+<ul class="modal-checklist">
+<li>Clean inside all cabinets and drawers</li>
+<li>Clean oven inside and out</li>
+<li>Clean refrigerator inside and out</li>
+<li>Scrub sink and faucet</li>
+<li>Wipe countertops and backsplash</li>
+<li>Clean microwave inside and out</li>
+</ul>
+</div>
+<div class="modal-section">
+<div class="modal-section-title">Bathrooms</div>
+<ul class="modal-checklist">
+<li>Scrub toilet, sink, tub, and shower</li>
+<li>Clean tile and grout</li>
+<li>Wipe mirrors and all fixtures</li>
+<li>Clean inside medicine cabinet</li>
+<li>Mop floors with disinfectant</li>
+</ul>
+</div>
+<div class="modal-note"><p><strong>Landlord &amp; realtor approved.</strong> Our move-out cleans meet the standard required for security deposit returns. We can provide a completion checklist upon request.</p></div>
+<div class="modal-cta">
+<a href="#contact" class="modal-btn-fill" onclick="closeModal('moveinout')">Get a Free Quote</a>
+<a href="tel:+19189480071" class="modal-btn-ghost">Call (918) 948-0071</a>
+</div>
+</div>
+</div>
+</div>
+
 <footer>
 <div class="ft-brand"><div class="ft-mark"><span>ADV</span></div><div class="ft-text"><strong>ADVanced Cleaning Services</strong><br>Where Every Detail Is the Standard.</div></div>
 <div class="ft-right">&copy; 2026 ADVanced Cleaning Services<br>Website by <a href="https://kanikahughley.com" target="_blank">Hovera Group</a></div>
@@ -441,6 +803,9 @@ window.addEventListener('scroll',()=>{document.getElementById('nav').classList.t
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))});
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function openModal(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow=''});}});
 </script>
 </body>
 </html>
