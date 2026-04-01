@@ -826,8 +826,77 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
     <button class="lang-btn" id="btnPT" onclick="setLang('pt')" aria-pressed="false" lang="pt">PT</button>
   </div>
 </div>
-<div style="text-align:center;padding-top:4px">&copy; 2026 ADVanced Cleaning Services, LLC &mdash; <span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://kanikahughley.com" target="_blank" rel="noopener">Hovera Group</a></div>
+<div style="text-align:center;padding-top:4px;font-size:11px;color:rgba(255,255,255,.25)">&copy; 2026 ADVanced Cleaning Services, LLC &mdash; <span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://kanikahughley.com" target="_blank" rel="noopener">Hovera Group</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Privacy Policy" data-pt="Política de Privacidade">Privacy Policy</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Data Use Notice" data-pt="Aviso de Uso de Dados">Data Use Notice</a></div>
 </footer>
+
+<!-- ===== COOKIE CONSENT BANNER ===== -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;background:rgba(28,38,34,.97);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.08);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+  <p style="color:rgba(255,255,255,.75);font-size:12px;margin:0;max-width:680px" id="cookieText">We use only essential cookies to keep this site running. We do not use tracking cookies, sell your data, or use AI to make automated decisions about you. <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:var(--gold-soft);text-decoration:underline">Learn more</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0">
+    <button onclick="acceptCookies()" style="padding:8px 20px;border-radius:100px;background:var(--sage);border:none;color:#fff;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.05em" id="cookieAcceptBtn">Accept</button>
+    <button onclick="declineCookies()" style="padding:8px 20px;border-radius:100px;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.05em" id="cookieDeclineBtn">Decline</button>
+  </div>
+</div>
+
+<!-- ===== PRIVACY POLICY MODAL ===== -->
+<div id="privacyModal" class="modal-overlay" onclick="if(event.target===this)document.getElementById('privacyModal').classList.remove('open')" style="z-index:10000">
+  <div class="modal" style="max-width:680px">
+    <div class="modal-header">
+      <div class="modal-eyebrow">ADVanced Cleaning Services, LLC</div>
+      <div class="modal-title" id="privacyTitle">Privacy Policy & Data Use Notice</div>
+      <button class="modal-close" onclick="document.getElementById('privacyModal').classList.remove('open')" aria-label="Close privacy policy">&#10005;</button>
+    </div>
+    <div class="modal-body" style="max-height:60vh;overflow-y:auto">
+      <p class="modal-intro" id="privacyIntro">ADVanced Cleaning Services, LLC is committed to protecting your privacy and handling your information responsibly. This notice explains what data we collect, how we use it, and your rights.</p>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS1">What Information We Collect</div>
+        <ul class="modal-checklist" id="privacyL1">
+          <li>Name, email address, and phone number (submitted via our quote request form)</li>
+          <li>Service preferences and property details you voluntarily provide</li>
+          <li>Basic usage data (pages visited) via essential cookies only</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS2">How We Use Your Information</div>
+        <ul class="modal-checklist" id="privacyL2">
+          <li>To respond to your quote request and schedule services</li>
+          <li>To communicate about your appointments and service updates</li>
+          <li>We do <strong>not</strong> sell, rent, or share your data with third parties for marketing</li>
+          <li>We do <strong>not</strong> use automated AI systems to make decisions about your service eligibility</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS3">AI & Automated Systems Disclosure</div>
+        <ul class="modal-checklist" id="privacyL3">
+          <li>This website was built with AI-assisted development tools (responsible use per NIST AI RMF principles)</li>
+          <li>No automated AI system makes decisions about your service, pricing, or eligibility</li>
+          <li>All service decisions are made by a human — Andrea Del Valle or her team</li>
+          <li>Any AI tools used in our operations are subject to human oversight at all times</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS4">Your Rights</div>
+        <ul class="modal-checklist" id="privacyL4">
+          <li>You may request to view, correct, or delete your personal information at any time</li>
+          <li>You may opt out of any future communications by replying to any email we send</li>
+          <li>To exercise your rights, contact us at <a href="mailto:adv@advcleaningservices.com" style="color:var(--sage)">adv@advcleaningservices.com</a></li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS5">Cookies & Tracking</div>
+        <ul class="modal-checklist" id="privacyL5">
+          <li>We use only <strong>essential cookies</strong> required for the site to function</li>
+          <li>We do <strong>not</strong> use advertising, tracking, or analytics cookies</li>
+          <li>You may decline cookies — the site will still work fully without them</li>
+        </ul>
+      </div>
+      <p style="font-size:12px;color:var(--text-light);margin-top:16px" id="privacyDate">Last updated: April 2026 &mdash; ADVanced Cleaning Services, LLC &mdash; Tulsa, OK</p>
+    </div>
+    <div class="modal-cta">
+      <button class="modal-btn-fill" onclick="document.getElementById('privacyModal').classList.remove('open')" id="privacyClose">Close</button>
+    </div>
+  </div>
+</div>
 
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
@@ -926,6 +995,22 @@ function setLang(lang){
     if(saved){setLang(saved);}
     else if(browserLang.toLowerCase().startsWith('pt')){setLang('pt');}
   }catch(e){}
+})();
+
+/* ===== COOKIE CONSENT ===== */
+function acceptCookies(){
+  try{localStorage.setItem('adv-cookie-consent','accepted');}catch(e){}
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  try{localStorage.setItem('adv-cookie-consent','declined');}catch(e){}
+  document.getElementById('cookieBanner').style.display='none';
+}
+(function(){
+  try{
+    var consent=localStorage.getItem('adv-cookie-consent');
+    if(!consent){document.getElementById('cookieBanner').style.display='flex';}
+  }catch(e){document.getElementById('cookieBanner').style.display='flex';}
 })();
 
 /* ===== IMAGE PROTECTION ===== */
