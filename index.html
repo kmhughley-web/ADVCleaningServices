@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ADVanced Cleaning Services — Professional residential and commercial cleaning in Tulsa, OK. Where Every Detail Is the Standard.">
+<meta name="description" content="ADVanced Cleaning Services, LLC — Professional residential and commercial cleaning in Tulsa, OK. Where Every Detail Is the Standard.">
 <!-- Open Graph / Social Sharing -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="ADVanced Cleaning Services | Tulsa, OK">
+<meta property="og:title" content="ADVanced Cleaning Services, LLC | Tulsa, OK">
 <meta property="og:description" content="Professional residential and commercial cleaning. Bonded & insured. Where Every Detail Is the Standard.">
 <meta property="og:image" content="https://advcleaningservices.com/images/og-image.png">
 <meta property="og:url" content="https://advcleaningservices.com">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ADVanced Cleaning Services | Tulsa, OK">
+<meta name="twitter:title" content="ADVanced Cleaning Services, LLC | Tulsa, OK">
 <meta name="twitter:description" content="Professional residential and commercial cleaning. Bonded & insured. Where Every Detail Is the Standard.">
 <meta name="twitter:image" content="https://advcleaningservices.com/images/og-image.png">
 <!-- Mobile -->
@@ -20,12 +20,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ADVanced Cleaning Services | Tulsa, OK">
+<meta name="twitter:title" content="ADVanced Cleaning Services, LLC | Tulsa, OK">
 <meta name="twitter:description" content="Professional residential and commercial cleaning. Bonded & insured. Where Every Detail Is the Standard.">
 <meta name="twitter:image" content="https://advcleaningservices.com/images/og-image.png">
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C2622'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-weight='700' font-size='12' fill='white' letter-spacing='1'%3EADV%3C/text%3E%3C/svg%3E">
-<title>ADVanced Cleaning Services | Tulsa, OK</title>
+<title>ADVanced Cleaning Services, LLC | Tulsa, OK</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -41,7 +41,7 @@ nav.scrolled{border-bottom-color:rgba(0,0,0,.06)}
 .nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none}
 .nav-mark{width:38px;height:38px;border-radius:8px;background:var(--dark);display:flex;align-items:center;justify-content:center}
 .nav-mark span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;color:#fff;letter-spacing:2px}
-.nav-wordmark{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--dark);letter-spacing:-.3px}
+.nav-wordmark{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:var(--dark);letter-spacing:-.3px;line-height:1.2}
 .nav-links{display:flex;gap:36px;align-items:center}
 .nav-links a{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--text-light);transition:color .3s}
 .nav-links a:hover{color:var(--dark)}
@@ -266,13 +266,16 @@ footer{padding:40px 48px;background:var(--dark);display:flex;justify-content:spa
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
 @media(max-width:900px){
-nav{padding:0 24px}.nav-links{display:none}.mob-toggle{display:block}
-.nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--cream-deep);padding:24px;gap:18px}
-.hero{grid-template-columns:1fr;min-height:auto}.hero-left{padding:120px 24px 60px}
+nav{padding:0 20px}.nav-links{display:none}.mob-toggle{display:block}
+.nav-wordmark{font-size:13px;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-links.open{display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(250,250,247,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--cream-deep);padding:28px 24px;gap:20px;box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.nav-links.open a{font-size:14px;padding:8px 0;border-bottom:1px solid var(--cream-deep)}
+.nav-links.open a:last-child{border-bottom:none}
+.hero{grid-template-columns:1fr;min-height:auto}.hero-left{padding:110px 24px 60px}
 .hero-right{height:60vh}.hero-overlay-text,.scroll-hint{display:none}
 .services{padding:80px 24px}.services-top{flex-direction:column;align-items:flex-start}.services-top p{text-align:left}
 .services-track{flex-wrap:wrap}.service-card{flex:0 0 50%;min-width:auto;border-bottom:1px solid var(--cream-deep)}
-.service-link{opacity:1}
+.service-link{opacity:1}.service-detail-btn{opacity:1}
 .story{grid-template-columns:1fr}.story-img{height:50vh}.story-content{padding:60px 24px}
 .reviews{padding:80px 24px}.reviews-grid{grid-template-columns:1fr}.reviews-header{flex-direction:column;align-items:flex-start;gap:12px}
 .contact{padding:80px 24px}.contact-inner{grid-template-columns:1fr;gap:40px}.contact-form-wrap{padding:32px 24px}
@@ -282,25 +285,30 @@ nav{padding:0 24px}.nav-links{display:none}.mob-toggle{display:block}
 footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-right{text-align:center}
 }
 @media(max-width:600px){
-.hero h1{font-size:2.6rem}.services-track{flex-direction:column}.service-card{flex:auto;border-left:none;border-right:none}
+.hero h1{font-size:2.4rem}.services-track{flex-direction:column}.service-card{flex:auto;border-left:none;border-right:none}
+.service-link{opacity:1!important}.service-detail-btn{opacity:1!important}
 .f-row{grid-template-columns:1fr}.story-stats{gap:28px}
 .ba-grid{grid-template-columns:1fr}
 .hero-actions{flex-direction:column;width:100%}
-.btn-hero{width:100%;text-align:center;justify-content:center}
+.btn-hero{width:100%;text-align:center;justify-content:center;min-height:54px}
 .f-group input,.f-group select,.f-group textarea{padding:16px;font-size:16px}
-.f-submit{padding:18px}
+.f-submit{padding:18px;min-height:56px}
 .review-card{padding:32px 24px}
 .philosophy blockquote{font-size:1.3rem}
+.nav-wordmark{font-size:12px;max-width:160px}
+.modal-cta{flex-direction:column}.modal-btn-fill,.modal-btn-ghost{width:100%;text-align:center;justify-content:center}
 }
 </style>
 </head>
 <body>
-<nav id="nav">
-<a href="#" class="nav-brand"><div class="nav-mark"><span>ADV</span></div><span class="nav-wordmark">ADVanced</span></a>
+<a href="#main" class="skip-link">Skip to main content</a>
+<nav id="nav" role="navigation" aria-label="Main navigation">
+<a href="#" class="nav-brand"><div class="nav-mark"><span>ADV</span></div><span class="nav-wordmark">ADVanced Cleaning Services, LLC</span></a>
 <div class="nav-links" id="navLinks"><a href="#services">Services</a><a href="#results">Results</a><a href="#video">Our Work</a><a href="#story">Story</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta-link">Get a Quote</a></div>
-<button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+<button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle navigation menu" aria-expanded="false" id="mobToggle"><span></span><span></span><span></span></button>
 </nav>
 
+<main id="main">
 <section class="hero">
 <div class="hero-left">
 <div class="hero-tag"><div class="hero-tag-line"></div><span>Bonded &amp; Insured &middot; Tulsa, OK</span></div>
@@ -314,7 +322,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </div>
 <div class="hero-right">
-<img src="images/andrea.png" alt="Andrea Del Valle, founder of ADVanced Cleaning Services">
+<img src="images/andrea.png" alt="Andrea Del Valle, founder of ADVanced Cleaning Services, LLC">
 <div class="hero-overlay-text"><span>Andrea Del Valle &middot; Founder</span></div>
 </div>
 </section>
@@ -404,7 +412,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="story-content">
 <div class="section-eyebrow reveal">The Person Behind Every Detail</div>
 <h2 class="reveal d1"><strong>Andrea</strong> Del Valle</h2>
-<div class="story-name-sub reveal d2">Founder, ADVanced Cleaning Services</div>
+<div class="story-name-sub reveal d2">Founder, ADVanced Cleaning Services, LLC</div>
 <div class="story-divider reveal d2"></div>
 <p class="reveal d3">I moved to a new country with a simple goal: reinvent myself and build something meaningful. I found it in an unexpected place&mdash;in the discipline of making someone&rsquo;s space feel like home again.</p>
 <p class="reveal d3">Years later, I&rsquo;ve built a company that businesses and families rely on every day. My clients don&rsquo;t stay because they have to. They stay because we show up with the same consistency, the same care, and the same attention to detail&mdash;every visit.</p>
@@ -793,9 +801,10 @@ Your browser does not support video.
 </div>
 </div>
 
+</main>
 <footer>
-<div class="ft-brand"><div class="ft-mark"><span>ADV</span></div><div class="ft-text"><strong>ADVanced Cleaning Services</strong><br>Where Every Detail Is the Standard.</div></div>
-<div class="ft-right">&copy; 2026 ADVanced Cleaning Services<br>Website by <a href="https://kanikahughley.com" target="_blank">Hovera Group</a></div>
+<div class="ft-brand"><div class="ft-mark"><span>ADV</span></div><div class="ft-text"><strong>ADVanced Cleaning Services, LLC</strong><br>Where Every Detail Is the Standard.</div></div>
+<div class="ft-right">&copy; 2026 ADVanced Cleaning Services, LLC<br>Website by <a href="https://kanikahughley.com" target="_blank">Hovera Group</a></div>
 </footer>
 
 <script>
@@ -803,9 +812,9 @@ window.addEventListener('scroll',()=>{document.getElementById('nav').classList.t
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))});
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.12,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-function openModal(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden';}
+function openModal(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden';document.getElementById('modal-'+id).querySelector('.modal-close').focus();}
 function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow=''});}});
-</script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow='';});}});
+var mobToggle=document.getElementById('mobToggle');if(mobToggle){mobToggle.addEventListener('click',function(){var expanded=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',!expanded);});}</script>
 </body>
 </html>

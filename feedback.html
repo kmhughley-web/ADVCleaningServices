@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Review & Feedback — ADVanced Cleaning Services, LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--sage:#3D6B5E;--sage-deep:#2B4F44;--cream:#F5F0E8;--cream-deep:#EDE6DA;--gold:#8B7430;--gold-soft:#C4A96E;--dark:#1C2622;--text:#3B4A45;--text-light:#7A8E87;--white:#FAFAF7;--paper:#F7F4EE}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:var(--paper);-webkit-font-smoothing:antialiased;min-height:100vh}
+
+header{background:var(--dark);padding:24px 40px;display:flex;align-items:center;gap:16px}
+.hdr-mark{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:14px;color:#fff;letter-spacing:2px;flex-shrink:0}
+.hdr-text h1{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:-.02em}
+.hdr-text p{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;letter-spacing:.04em}
+
+.page-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+
+.intro-card{background:#fff;border-radius:8px;padding:36px 40px;margin-bottom:40px;border:1px solid var(--cream-deep);box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.intro-card h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--dark);margin-bottom:8px;letter-spacing:-.02em}
+.intro-card p{font-size:14px;color:var(--text-light);line-height:1.8;margin-bottom:12px}
+.intro-card p:last-child{margin-bottom:0}
+.intro-card strong{color:var(--dark)}
+
+.preview-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--sage);color:#fff;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:20px;transition:all .3s}
+.preview-btn:hover{background:var(--sage-deep)}
+.preview-btn svg{width:14px;height:14px;fill:currentColor}
+
+.section-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.section-label::after{content:'';flex:1;height:1px;background:var(--cream-deep)}
+
+.feedback-card{background:#fff;border-radius:8px;border:1px solid var(--cream-deep);margin-bottom:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.03)}
+.feedback-card-header{padding:20px 28px;background:var(--cream);border-bottom:1px solid var(--cream-deep);display:flex;align-items:center;gap:12px}
+.card-num{width:28px;height:28px;border-radius:50%;background:var(--dark);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-section-name{font-size:13px;font-weight:700;color:var(--dark);letter-spacing:.02em}
+.card-section-desc{font-size:12px;color:var(--text-light);margin-top:1px}
+.feedback-card-body{padding:24px 28px}
+
+.current-text{background:var(--paper);border-radius:4px;padding:14px 16px;margin-bottom:16px;border-left:3px solid var(--cream-deep)}
+.current-text-label{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--text-light);margin-bottom:6px}
+.current-text-content{font-size:14px;color:var(--dark);line-height:1.7;font-style:italic}
+
+.f-group{margin-bottom:16px}
+.f-group label{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px}
+.f-group textarea,.f-group input,.f-group select{width:100%;padding:12px 14px;border:1.5px solid var(--cream-deep);border-radius:4px;font-family:'Manrope',sans-serif;font-size:14px;color:var(--dark);background:var(--paper);transition:all .3s;outline:none;resize:vertical}
+.f-group textarea{min-height:90px}
+.f-group textarea:focus,.f-group input:focus,.f-group select:focus{border-color:var(--sage);background:#fff;box-shadow:0 0 0 3px rgba(61,107,94,.06)}
+.f-hint{font-size:11px;color:var(--text-light);margin-top:5px;line-height:1.5}
+
+.approval-row{display:flex;gap:12px;flex-wrap:wrap}
+.approval-option{display:flex;align-items:center;gap:8px;cursor:pointer}
+.approval-option input[type="radio"]{accent-color:var(--sage);width:16px;height:16px;cursor:pointer}
+.approval-option span{font-size:13px;font-weight:600;color:var(--dark)}
+
+.submit-section{background:#fff;border-radius:8px;padding:32px 40px;border:1px solid var(--cream-deep);margin-top:32px}
+.submit-section h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--dark);margin-bottom:6px}
+.submit-section p{font-size:13px;color:var(--text-light);margin-bottom:24px;line-height:1.7}
+.submit-btn{width:100%;padding:17px;background:var(--dark);color:#fff;border:none;border-radius:100px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .4s;box-shadow:0 4px 20px rgba(28,38,34,.15)}
+.submit-btn:hover{background:var(--sage);transform:translateY(-2px)}
+
+.success-msg{display:none;background:var(--sage);color:#fff;border-radius:8px;padding:32px 40px;text-align:center;margin-top:24px}
+.success-msg h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:8px}
+.success-msg p{font-size:14px;opacity:.85;line-height:1.7}
+
+.phone-note{background:rgba(139,116,48,.08);border:1px solid rgba(139,116,48,.2);border-radius:6px;padding:14px 18px;margin-bottom:24px;display:flex;gap:12px;align-items:flex-start}
+.phone-note-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.phone-note-text{font-size:13px;color:var(--dark);line-height:1.6}
+.phone-note-text strong{color:var(--gold)}
+
+@media(max-width:600px){
+.page-wrap{padding:32px 16px 60px}
+.intro-card,.submit-section{padding:24px 20px}
+.feedback-card-body{padding:20px}
+.feedback-card-header{padding:16px 20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr-mark">ADV</div>
+  <div class="hdr-text">
+    <h1>ADVanced Cleaning Services, LLC</h1>
+    <p>Website Review &amp; Feedback Form &mdash; Confidential</p>
+  </div>
+</header>
+
+<div class="page-wrap">
+
+  <div class="intro-card">
+    <h2>Hi Andrea! 👋 Your website is ready for review.</h2>
+    <p>This is your official review form. Please look over each section of the website and use this form to tell us exactly what you'd like to change — wording, names, services, anything at all.</p>
+    <p><strong>How it works:</strong> For each section, you'll see the current text. If you want to change it, just type your new version in the box below it. If you're happy with it, leave the box empty and check "Looks Good." When you're done, hit Submit at the bottom.</p>
+    <p>Once you submit, your feedback goes directly to your web team and we'll apply all changes within 24 hours.</p>
+    <a href="/" target="_blank" class="preview-btn">
+      <svg viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+      Open Website Preview in New Tab
+    </a>
+  </div>
+
+  <div class="phone-note">
+    <div class="phone-note-icon">📞</div>
+    <div class="phone-note-text"><strong>Action needed:</strong> The website currently shows your phone number as (918) 948-0071. Please confirm this is correct, or provide your preferred business phone number in the form below.</div>
+  </div>
+
+  <form id="feedbackForm" onsubmit="submitFeedback(event)">
+
+    <!-- Identity -->
+    <div class="f-group" style="margin-bottom:32px">
+      <label>Your Name <span style="color:var(--sage)">*</span></label>
+      <input type="text" name="name" placeholder="Andrea Del Valle" required>
+    </div>
+
+    <!-- Section 1: Business Name & Tagline -->
+    <div class="section-label">Section 1 — Business Name &amp; Tagline</div>
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">1</div>
+        <div><div class="card-section-name">Business Name</div><div class="card-section-desc">Appears in the nav bar, footer, and page title</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="current-text"><div class="current-text-label">Currently reads</div><div class="current-text-content">ADVanced Cleaning Services, LLC</div></div>
+        <div class="f-group">
+          <label>Your correction (leave blank if correct)</label>
+          <input type="text" name="business_name" placeholder="e.g. ADVanced Cleaning Services LLC (no comma)">
+        </div>
+        <div class="approval-row">
+          <label class="approval-option"><input type="radio" name="approve_name" value="approved" checked><span>✅ Looks Good</span></label>
+          <label class="approval-option"><input type="radio" name="approve_name" value="needs_change"><span>✏️ Needs Change</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Tagline -->
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">2</div>
+        <div><div class="card-section-name">Tagline</div><div class="card-section-desc">Appears under the hero headline and in the footer</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="current-text"><div class="current-text-label">Currently reads</div><div class="current-text-content">"Where Every Detail Is the Standard."</div></div>
+        <div class="f-group">
+          <label>Your correction (leave blank if correct)</label>
+          <textarea name="tagline" placeholder="Type your preferred tagline here..."></textarea>
+        </div>
+        <div class="approval-row">
+          <label class="approval-option"><input type="radio" name="approve_tagline" value="approved" checked><span>✅ Looks Good</span></label>
+          <label class="approval-option"><input type="radio" name="approve_tagline" value="needs_change"><span>✏️ Needs Change</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Hero Body Copy -->
+    <div class="section-label">Section 2 — Hero (Top of Page)</div>
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">3</div>
+        <div><div class="card-section-name">Hero Description</div><div class="card-section-desc">The paragraph under the main headline</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="current-text"><div class="current-text-label">Currently reads</div><div class="current-text-content">"Residential and commercial cleaning for people who notice the difference. We bring the supplies, the consistency, and the care."</div></div>
+        <div class="f-group">
+          <label>Your correction (leave blank if correct)</label>
+          <textarea name="hero_body" placeholder="Type your preferred wording here..."></textarea>
+        </div>
+        <div class="approval-row">
+          <label class="approval-option"><input type="radio" name="approve_hero" value="approved" checked><span>✅ Looks Good</span></label>
+          <label class="approval-option"><input type="radio" name="approve_hero" value="needs_change"><span>✏️ Needs Change</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Phone Number -->
+    <div class="section-label">Section 3 — Contact Information</div>
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">4</div>
+        <div><div class="card-section-name">Business Phone Number</div><div class="card-section-desc">Appears in the hero, contact section, and all service modals</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="current-text"><div class="current-text-label">Currently reads</div><div class="current-text-content">(918) 948-0071</div></div>
+        <div class="f-group">
+          <label>Confirm or correct your business phone number <span style="color:var(--sage)">*</span></label>
+          <input type="tel" name="phone_number" placeholder="(918) 948-0071" required>
+          <div class="f-hint">Please confirm this is the number you want customers to call/text. If different, enter the correct number.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: About / Story -->
+    <div class="section-label">Section 4 — Your Story</div>
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">5</div>
+        <div><div class="card-section-name">About Andrea (Story Section)</div><div class="card-section-desc">Your personal story that appears mid-page</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="current-text"><div class="current-text-label">Currently reads</div><div class="current-text-content">"I moved to a new country with a simple goal: reinvent myself and build something meaningful. I found it in an unexpected place — in the discipline of making someone's space feel like home again. Years later, I've built a company that businesses and families rely on every day. My clients don't stay because they have to. They stay because we show up with the same consistency, the same care, and the same attention to detail — every visit."</div></div>
+        <div class="f-group">
+          <label>Your correction or additions (leave blank if correct)</label>
+          <textarea name="story" rows="5" placeholder="Type your preferred story wording here. You can also add or remove sentences."></textarea>
+        </div>
+        <div class="approval-row">
+          <label class="approval-option"><input type="radio" name="approve_story" value="approved" checked><span>✅ Looks Good</span></label>
+          <label class="approval-option"><input type="radio" name="approve_story" value="needs_change"><span>✏️ Needs Change</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: Services -->
+    <div class="section-label">Section 5 — Services</div>
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">6</div>
+        <div><div class="card-section-name">Services Offered</div><div class="card-section-desc">The 5 service cards: Deep Clean, Basic, Commercial, Post-Construction, Move-In/Out</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="current-text"><div class="current-text-label">Currently listed</div><div class="current-text-content">1. Deep Cleaning &nbsp; 2. Basic Cleaning &nbsp; 3. Commercial &nbsp; 4. Post-Construction &nbsp; 5. Move-In / Out</div></div>
+        <div class="f-group">
+          <label>Any services to add, remove, or rename?</label>
+          <textarea name="services_feedback" placeholder="e.g. 'Add Airbnb Turnover as a 6th service' or 'Rename Commercial to Office &amp; Commercial' or 'Everything looks correct'"></textarea>
+        </div>
+        <div class="approval-row">
+          <label class="approval-option"><input type="radio" name="approve_services" value="approved" checked><span>✅ Looks Good</span></label>
+          <label class="approval-option"><input type="radio" name="approve_services" value="needs_change"><span>✏️ Needs Change</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: Stats -->
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">7</div>
+        <div><div class="card-section-name">Your Stats (Numbers)</div><div class="card-section-desc">The 3 numbers shown in your story section</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="current-text"><div class="current-text-label">Currently reads</div><div class="current-text-content">200+ Clients Served &nbsp;|&nbsp; 5+ Years Experience &nbsp;|&nbsp; 100% Satisfaction Guaranteed</div></div>
+        <div class="f-group">
+          <label>Your correction (leave blank if correct)</label>
+          <textarea name="stats" placeholder="e.g. '150+ Clients Served | 3 Years Experience | 5-Star Rated'"></textarea>
+        </div>
+        <div class="approval-row">
+          <label class="approval-option"><input type="radio" name="approve_stats" value="approved" checked><span>✅ Looks Good</span></label>
+          <label class="approval-option"><input type="radio" name="approve_stats" value="needs_change"><span>✏️ Needs Change</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 8: Reviews -->
+    <div class="section-label">Section 6 — Reviews</div>
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">8</div>
+        <div><div class="card-section-name">Customer Reviews</div><div class="card-section-desc">The testimonials shown on the website</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="f-group">
+          <label>Do you have real reviews you'd like to add? Paste them here.</label>
+          <textarea name="reviews" rows="5" placeholder="Paste any real Google, Facebook, or word-of-mouth reviews here. Include the customer's first name and city if possible.&#10;&#10;Example:&#10;&quot;Andrea was absolutely amazing — my house has never been this clean!&quot; — Sarah M., Tulsa"></textarea>
+          <div class="f-hint">Real reviews build trust. Even 1–2 genuine testimonials make a big difference.</div>
+        </div>
+        <div class="approval-row">
+          <label class="approval-option"><input type="radio" name="approve_reviews" value="approved" checked><span>✅ Keep current reviews</span></label>
+          <label class="approval-option"><input type="radio" name="approve_reviews" value="needs_change"><span>✏️ Replace with mine above</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 9: General -->
+    <div class="section-label">Section 7 — Anything Else</div>
+    <div class="feedback-card">
+      <div class="feedback-card-header">
+        <div class="card-num">9</div>
+        <div><div class="card-section-name">General Feedback</div><div class="card-section-desc">Anything else you'd like to change, add, or remove</div></div>
+      </div>
+      <div class="feedback-card-body">
+        <div class="f-group">
+          <label>Open feedback — anything goes</label>
+          <textarea name="general" rows="5" placeholder="e.g. 'I want to add my Instagram link' or 'The colors feel too dark' or 'Can we add a pricing section?' or 'Everything looks perfect!'"></textarea>
+        </div>
+        <div class="f-group">
+          <label>Overall, how do you feel about the website?</label>
+          <select name="overall_rating">
+            <option value="">Select one...</option>
+            <option value="love_it">I love it — just a few small tweaks</option>
+            <option value="mostly_good">Mostly good — some things need changing</option>
+            <option value="needs_work">Needs significant changes</option>
+            <option value="start_over">I'd like to rethink the direction</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-section">
+      <h3>Ready to submit your feedback?</h3>
+      <p>Once you hit Submit, your web team will review everything and apply all changes. You'll get a confirmation that your feedback was received. This usually takes 24 hours or less.</p>
+      <button type="submit" class="submit-btn">Submit My Feedback &rarr;</button>
+    </div>
+
+  </form>
+
+  <div class="success-msg" id="successMsg">
+    <h3>Thank you, Andrea! 🎉</h3>
+    <p>Your feedback has been submitted. Your web team will review everything and apply your changes within 24 hours. We'll send you an updated preview link once it's ready.</p>
+    <p style="margin-top:12px;font-size:12px;opacity:.7">ADVanced Cleaning Services, LLC &mdash; Website by Hovera Group</p>
+  </div>
+
+</div>
+
+<script>
+function submitFeedback(e) {
+  e.preventDefault();
+  var form = document.getElementById('feedbackForm');
+  var data = new FormData(form);
+  var summary = [];
+  data.forEach(function(val, key) {
+    if (val && val.trim()) summary.push(key + ': ' + val);
+  });
+  // Log to console for now (in production, this would POST to a backend or Formspree)
+  console.log('Feedback submitted:', summary);
+  form.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+  window.scrollTo({top: document.getElementById('successMsg').offsetTop - 40, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
