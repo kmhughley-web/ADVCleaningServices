@@ -146,6 +146,11 @@ nav.scrolled{border-bottom-color:rgba(0,0,0,.06)}
 .modal-btn-fill:hover{background:var(--sage)}
 .modal-btn-ghost{padding:13px 28px;background:transparent;color:var(--dark);border:1.5px solid var(--dark);border-radius:100px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .4s}
 .modal-btn-ghost:hover{background:var(--dark);color:#fff}
+/* ===== IMAGE PROTECTION ===== */
+img{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.story-img img,.before-after-card img{pointer-events:none;-webkit-touch-callout:none}
+/* Honeypot field - hidden from real users */
+.hp-field{opacity:0;position:absolute;top:0;left:0;height:0;width:0;z-index:-1;overflow:hidden}
 @media(max-width:600px){.modal-checklist{grid-template-columns:1fr}.modal-header,.modal-body{padding-left:24px;padding-right:24px}}
 
 
@@ -463,6 +468,10 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="f-group"><label for="email">Email <span class="req">*</span></label><input type="email" id="email" placeholder="you@email.com" required></div>
 <div class="f-group"><label for="type">Type of Service <span class="req">*</span></label><select id="type" required><option value="">Select one...</option><option>Home — Deep Cleaning</option><option>Home — Recurring Service</option><option>Office / Commercial</option><option>Move-In / Move-Out</option><option>Post-Construction</option><option>Other</option></select></div>
 <div class="f-group"><label for="details">About Your Space</label><textarea id="details" placeholder="Size, special requests, preferred schedule..."></textarea></div>
+<!-- Honeypot: bots fill this, humans don't see it -->
+<div class="hp-field" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+<!-- Timestamp: detect instant (bot) submissions -->
+<input type="hidden" name="_timestamp" id="_formTimestamp">
 <button type="submit" class="f-submit">Send Request &rarr;</button>
 </form>
 </div>
@@ -789,6 +798,58 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 function openModal(id){document.getElementById('modal-'+id).classList.add('open');document.body.style.overflow='hidden';document.getElementById('modal-'+id).querySelector('.modal-close').focus();}
 function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow='';});}});
-var mobToggle=document.getElementById('mobToggle');if(mobToggle){mobToggle.addEventListener('click',function(){var expanded=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',!expanded);});}</script>
+var mobToggle=document.getElementById('mobToggle');if(mobToggle){mobToggle.addEventListener('click',function(){var expanded=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',!expanded);});}
+
+/* ===== IMAGE PROTECTION ===== */
+// Disable right-click context menu on images
+document.querySelectorAll('img').forEach(function(img){
+  img.addEventListener('contextmenu',function(e){e.preventDefault();return false;});
+  img.addEventListener('dragstart',function(e){e.preventDefault();return false;});
+});
+// Disable right-click on the whole page (optional — allows text selection but blocks image save)
+document.addEventListener('contextmenu',function(e){
+  if(e.target.tagName==='IMG'){e.preventDefault();return false;}
+});
+
+/* ===== PHONE NUMBER OBFUSCATION ===== */
+// Phone number is split and assembled by JS — scrapers can't read it from HTML source
+(function(){
+  var p=['918','948','0071'];
+  var num=p.join('-');
+  var els=document.querySelectorAll('[data-phone]');
+  els.forEach(function(el){
+    el.textContent='('+p[0]+') '+p[1]+'-'+p[2];
+    if(el.tagName==='A')el.href='tel:+1'+p.join('');
+  });
+})();
+
+/* ===== FORM BOT PROTECTION ===== */
+// Set timestamp when page loads — instant submissions are bots
+var tsField=document.getElementById('_formTimestamp');
+if(tsField)tsField.value=Date.now();
+
+// Rate limiting: block more than 3 submissions in 10 minutes
+var submitCount=0;
+var lastReset=Date.now();
+var contactForm=document.querySelector('.contact form');
+if(contactForm){
+  contactForm.addEventListener('submit',function(e){
+    // Check honeypot
+    var hp=this.querySelector('input[name="_gotcha"]');
+    if(hp&&hp.value!==''){e.preventDefault();return false;}
+    // Check timestamp (block if submitted in under 3 seconds — bot speed)
+    var ts=parseInt(document.getElementById('_formTimestamp').value||0);
+    if(Date.now()-ts<3000){e.preventDefault();return false;}
+    // Rate limit
+    if(Date.now()-lastReset>600000){submitCount=0;lastReset=Date.now();}
+    submitCount++;
+    if(submitCount>3){
+      e.preventDefault();
+      var btn=this.querySelector('.f-submit');
+      if(btn){btn.textContent='Too many requests. Please try again later.';btn.disabled=true;}
+      return false;
+    }
+  });
+}</script>
 </body>
 </html>
