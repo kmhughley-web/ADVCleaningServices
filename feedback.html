@@ -315,15 +315,67 @@ function submitFeedback(e) {
   e.preventDefault();
   var form = document.getElementById('feedbackForm');
   var data = new FormData(form);
-  var summary = [];
+
+  // Build a readable email body from all form fields
+  var labels = {
+    'name': 'Client Name',
+    'overall_impression': 'Overall Impression',
+    'business_name_correct': 'Business Name Correct?',
+    'business_name_correction': 'Business Name Correction',
+    'tagline_approval': 'Tagline Approval',
+    'tagline_suggestion': 'Tagline Suggestion',
+    'hero_description': 'Hero Description Feedback',
+    'services_offered': 'Services Offered',
+    'services_to_add': 'Services to Add',
+    'services_to_remove': 'Services to Remove',
+    'story_approval': 'Story/About Section',
+    'story_rewrite': 'Story Rewrite',
+    'contact_email': 'Contact Email',
+    'phone_area_code': 'Preferred Area Code',
+    'service_areas': 'Service Areas',
+    'testimonials': 'Customer Testimonials',
+    'stats_correct': 'Stats Correct?',
+    'stats_correction': 'Stats Correction',
+    'photos_feedback': 'Before/After Photos Feedback',
+    'video_feedback': 'Video Feedback',
+    'voiceover_script': 'Voiceover Script',
+    'overall_rating': 'Overall Rating',
+    'additional_feedback': 'Additional Feedback'
+  };
+
+  var lines = [];
+  lines.push('=== ADVanced Cleaning Services, LLC ===');
+  lines.push('Website Feedback Form Submission');
+  lines.push('Submitted: ' + new Date().toLocaleString());
+  lines.push('==========================================');
+  lines.push('');
+
   data.forEach(function(val, key) {
-    if (val && val.trim()) summary.push(key + ': ' + val);
+    if (val && String(val).trim()) {
+      var label = labels[key] || key;
+      lines.push('--- ' + label.toUpperCase() + ' ---');
+      lines.push(val);
+      lines.push('');
+    }
   });
-  // Log to console for now (in production, this would POST to a backend or Formspree)
-  console.log('Feedback submitted:', summary);
-  form.style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  window.scrollTo({top: document.getElementById('successMsg').offsetTop - 40, behavior: 'smooth'});
+
+  lines.push('==========================================');
+  lines.push('Sent via ADVanced Cleaning Services Website Feedback Form');
+  lines.push('Action required: Review and update website at github.com/kmhughley-web/ADVCleaningServices');
+
+  var subject = encodeURIComponent('ADVanced Cleaning Services — Website Feedback from ' + (data.get('name') || 'Andrea'));
+  var body = encodeURIComponent(lines.join('\n'));
+  var mailtoLink = 'mailto:hughkanika@gmail.com?subject=' + subject + '&body=' + body;
+
+  // Open the mailto link to send the email
+  window.location.href = mailtoLink;
+
+  // Show success message
+  setTimeout(function() {
+    form.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }, 500);
 }
 </script>
 
