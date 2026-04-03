@@ -124,6 +124,8 @@ nav.scrolled{border-bottom-color:rgba(0,0,0,.06)}
 .service-link:hover .arrow{transform:translateX(3px)}
 .service-detail-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-muted);text-decoration:none;margin-top:6px;position:relative;z-index:1;transition:all .3s;cursor:pointer;background:none;border:none;padding:0;font-family:'Manrope',sans-serif}
 .service-detail-btn:hover{color:var(--sage);gap:10px}
+.service-card-arrow{position:absolute;bottom:32px;right:28px;background:none;border:none;font-size:18px;color:var(--gold-soft);cursor:pointer;z-index:2;transition:transform .3s,color .3s;padding:0;line-height:1}
+.service-card:hover .service-card-arrow{transform:translateX(4px);color:var(--sage)}
 
 .modal-overlay{position:fixed;inset:0;background:rgba(28,38,34,.65);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
 .modal-overlay.open{opacity:1;pointer-events:all}
@@ -319,7 +321,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 <nav id="nav" role="navigation" aria-label="Main navigation">
-<a href="#" class="nav-brand"><div class="nav-mark"><span>ADV</span></div><span class="nav-wordmark">ADVanced Cleaning Services, LLC</span></a>
+<a href="#" class="nav-brand"><div class="nav-mark"><span>ADV</span></div><span class="nav-wordmark">ADVanced Cleaning Services</span></a>
 <div class="nav-links" id="navLinks"><a href="#services">Services</a><a href="#results">Results</a><a href="#story">Story</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta-link">Get a Quote</a></div>
 <button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle navigation menu" aria-expanded="false" id="mobToggle"><span></span><span></span><span></span></button>
 </nav>
@@ -333,7 +335,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <p class="hero-body" data-en="Residential and commercial cleaning for people who notice the difference. We bring the supplies, the consistency, and the care." data-pt="Limpeza residencial e comercial para quem percebe a diferen&ccedil;a. Levamos os produtos, a consist&ecirc;ncia e o cuidado.">Residential and commercial cleaning for people who notice the difference. We bring the supplies, the consistency, and the care.</p>
 <div class="hero-actions">
 <a href="#contact" class="btn-hero btn-fill" data-en="Get a Free Quote" data-pt="Solicitar Or&ccedil;amento Gr&aacute;tis">Get a Free Quote</a>
-<a href="#contact" class="btn-hero btn-ghost" data-en="&#9742; Phone Coming Soon" data-pt="&#9742; N&uacute;mero em Breve">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="btn-hero btn-ghost" data-en="&#9742; (555) 555-5555" data-pt="&#9742; (555) 555-5555">&#9742; (555) 555-5555</a>
 </div>
 <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </div>
@@ -351,7 +353,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <section class="philosophy">
 <div class="philosophy-inner reveal">
 <div class="section-eyebrow">The ADV Standard</div>
-<blockquote>&ldquo;I started this company after moving to a new country and wanting to build something of my own. Cleaning became an opportunity not just to work, but to grow and create a service I could <strong>truly be proud of.</strong>&rdquo;</blockquote>
+<blockquote>&ldquo;I started this company after moving to a new country and wanting to build something of my own. Cleaning became an opportunity not just to work, but to grow and provide a service I could <strong>truly be proud of.</strong>&rdquo;</blockquote>
 <cite>&mdash; <span>Andrea Del Valle</span>, Founder</cite>
 </div>
 </section>
@@ -359,15 +361,15 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <section class="services" id="services">
 <div class="services-inner">
 <div class="services-top">
-<h2>From your<br><strong>living room</strong> to<br>your <strong>boardroom.</strong></h2>
+<h2>From your<br><strong>living room</strong> to<br>your <strong>boardroom</strong></h2>
 <p>Every space gets the same standard of care. Homes and offices, one company, no compromises.</p>
 </div>
 <div class="services-track">
-<div class="service-card reveal d1" onclick="openModal('deep')" role="button" tabindex="0" aria-label="Deep Cleaning — See what's included"><div class="service-idx">01</div><div class="service-line"></div><h3>Deep Cleaning</h3><p>The details you don&rsquo;t have time for. Baseboards, grout, fixtures, under and behind&mdash;every surface, every corner.</p><button class="service-detail-btn" onclick="event.stopPropagation();openModal('deep')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d2" onclick="openModal('basic')" role="button" tabindex="0" aria-label="Basic Cleaning — See what's included"><div class="service-idx">02</div><div class="service-line"></div><h3>Basic Cleaning</h3><p>Recurring upkeep. Your space stays fresh and presentable without you thinking about it.</p><button class="service-detail-btn" onclick="event.stopPropagation();openModal('basic')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d3" onclick="openModal('commercial')" role="button" tabindex="0" aria-label="Commercial — See what's included"><div class="service-idx">03</div><div class="service-line"></div><h3>Commercial</h3><p>Offices, retail, shared spaces. A professional standard your clients and team will notice immediately.</p><button class="service-detail-btn" onclick="event.stopPropagation();openModal('commercial')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d4" onclick="openModal('postconstruction')" role="button" tabindex="0" aria-label="Post-Construction — See what's included"><div class="service-idx">04</div><div class="service-line"></div><h3>Post-Construction</h3><p>Renovation dust, debris, residue. We make the space actually ready&mdash;not almost ready.</p><button class="service-detail-btn" onclick="event.stopPropagation();openModal('postconstruction')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d5" onclick="openModal('moveinout')" role="button" tabindex="0" aria-label="Move-In / Out — See what's included"><div class="service-idx">05</div><div class="service-line"></div><h3>Move-In / Out</h3><p>Start fresh or leave it perfect. A thorough clean for the transitions that matter.</p><button class="service-detail-btn" onclick="event.stopPropagation();openModal('moveinout')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
+<div class="service-card reveal d1" onclick="openModal('deep')" role="button" tabindex="0" aria-label="Deep Cleaning — See what's included"><div class="service-idx">01</div><div class="service-line"></div><h3>Deep Cleaning</h3><p>The details you don&rsquo;t have time for. Baseboards, grout, fixtures, under and behind&mdash;every surface, every corner.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('deep')" aria-label="See what's included in Deep Cleaning">&rarr;</button></div>
+<div class="service-card reveal d2" onclick="openModal('basic')" role="button" tabindex="0" aria-label="Basic Cleaning — See what's included"><div class="service-idx">02</div><div class="service-line"></div><h3>Basic Cleaning</h3><p>Recurring upkeep. Your space stays fresh and presentable without you thinking about it.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('basic')" aria-label="See what's included in Basic Cleaning">&rarr;</button></div>
+<div class="service-card reveal d3" onclick="openModal('commercial')" role="button" tabindex="0" aria-label="Commercial — See what's included"><div class="service-idx">03</div><div class="service-line"></div><h3>Commercial</h3><p>Offices, retail, shared spaces. A professional standard your clients and team will notice immediately.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('commercial')" aria-label="See what's included in Commercial Cleaning">&rarr;</button></div>
+<div class="service-card reveal d4" onclick="openModal('postconstruction')" role="button" tabindex="0" aria-label="Post-Construction — See what's included"><div class="service-idx">04</div><div class="service-line"></div><h3>Post-Construction</h3><p>Renovation dust, debris, residue. We make the space actually ready&mdash;not almost ready.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('postconstruction')" aria-label="See what's included in Post-Construction Clean">&rarr;</button></div>
+<div class="service-card reveal d5" onclick="openModal('moveinout')" role="button" tabindex="0" aria-label="Move-In / Out — See what's included"><div class="service-idx">05</div><div class="service-line"></div><h3>Move-In / Out</h3><p>Start fresh or leave it perfect. A thorough clean for the transitions that matter.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('moveinout')" aria-label="See what's included in Move-In / Out Clean">&rarr;</button></div>
 </div>
 </div>
 </section>
@@ -444,7 +446,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="reviews-inner">
 <div class="reviews-header"><div>
 <div class="section-eyebrow" data-en="What They Say" data-pt="O Que Dizem">What They Say</div>
-<h2 data-en="The people we<br><strong>clean for.</strong>" data-pt="As pessoas para<br>quem <strong>limpamos.</strong>">The people we<br><strong>clean for.</strong></h2>
+<h2 data-en="The people<br><strong>we clean for.</strong>" data-pt="As pessoas para<br>quem <strong>limpamos.</strong>">The people<br><strong>we clean for.</strong></h2>
 </div></div>
 <div class="reviews-grid">
 <div class="review-card reveal d1">
@@ -476,8 +478,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <h2 data-en="Let&rsquo;s talk<br>about your <strong>space.</strong>" data-pt="Vamos conversar<br>sobre o seu <strong>espa&ccedil;o.</strong>">Let&rsquo;s talk<br>about your <strong>space.</strong></h2>
 <div class="contact-tagline" data-en="Every project starts with a conversation." data-pt="Todo projeto come&ccedil;a com uma conversa.">Every project starts with a conversation.</div>
 <p data-en="Whether it&rsquo;s your home or your business, tell us what you need. We&rsquo;ll get back to you within 24 hours." data-pt="Seja sua casa ou seu neg&oacute;cio, nos diga o que voc&ecirc; precisa. Retornamos em at&eacute; 24 horas.">Whether it&rsquo;s your home or your business, tell us what you need. We&rsquo;ll get back to you within 24 hours.</p>
-<div class="c-detail"><div class="c-icon">&#9742;</div><div><div class="c-label">Call or Text</div><div class="c-value" style="color:var(--text-light);font-style:italic">Business number coming soon &mdash; <span style="color:var(--sage);font-style:normal;font-weight:600">Provided by Hovera Group</span> as part of your GHL setup</div></div></div>
-<div class="c-detail"><div class="c-icon">&#9993;</div><div><div class="c-label">Email</div><div class="c-value"><a href="mailto:andrea@advcleaningservices.com">andrea@advcleaningservices.com</a></div></div></div>
+<div class="c-detail"><div class="c-icon">&#9742;</div><div><div class="c-label">Call or Text</div><div class="c-value"><a href="tel:+15555555555" data-phone>(555) 555-5555</a></div></div></div>
 <div class="c-detail"><div class="c-icon">&#10070;</div><div><div class="c-label">Payment</div><div class="c-value">Cash, Zelle, Venmo, CashApp, Checks</div></div></div>
 </div>
 <div class="contact-form-wrap reveal d2">
@@ -560,10 +561,10 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <li>Vacuum sofas and chairs</li>
 </ul>
 </div>
-<div class="modal-note"><p><strong>Supplies included.</strong> Andrea brings all professional-grade cleaning products and equipment. You don&rsquo;t need to provide a thing.</p></div>
+<div class="modal-note"><p><strong>Supplies included.</strong> Andrea provides all professional-grade cleaning products and equipment. You don&rsquo;t need to provide a thing.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('deep')">Get a Free Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -633,10 +634,10 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <li>Organize and straighten items</li>
 </ul>
 </div>
-<div class="modal-note"><p><strong>Consistency is the standard.</strong> Recurring clients receive the same cleaner every visit so Andrea learns your home and your preferences.</p></div>
+<div class="modal-note"><p><strong>Consistency is the standard.</strong> Recurring clients receive the same cleaner every visit, so Andrea learns your home and your preferences.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('basic')">Get a Free Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -698,7 +699,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="modal-note"><p><strong>Bonded &amp; insured.</strong> All commercial clients receive a signed service agreement. We are fully bonded and insured for your protection and peace of mind.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('commercial')">Request a Commercial Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -799,7 +800,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="modal-note"><p><strong>Landlord &amp; realtor approved.</strong> Our move-out cleans meet the standard required for security deposit returns. We can provide a completion checklist upon request.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('moveinout')">Get a Free Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -812,7 +813,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
     <div class="ft-mark" aria-hidden="true"><span>ADV</span></div>
     <div class="ft-text"><strong>ADVanced Cleaning Services, LLC</strong><br><span data-en="Where Every Detail Is the Standard." data-pt="Onde Cada Detalhe É o Padrão.">Where Every Detail Is the Standard.</span></div>
   </div>
-  <div class="ft-right">&copy; 2026 ADVanced Cleaning Services, LLC<br><span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://kanikahughley.com" target="_blank" rel="noopener">Hovera Group</a></div>
+  <div class="ft-right">&copy; 2026 ADVanced Cleaning Services, LLC<br><span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://hoveragroup.com" target="_blank" rel="noopener">Hovera Group</a></div>
 </div>
 <!-- Social Media Icons -->
 <div class="ft-social" role="list" aria-label="Social media links">
@@ -833,7 +834,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
     <button class="lang-btn" id="btnPT" onclick="setLang('pt')" aria-pressed="false" lang="pt">PT</button>
   </div>
 </div>
-<div style="text-align:center;padding-top:4px;font-size:11px;color:rgba(255,255,255,.25)">&copy; 2026 ADVanced Cleaning Services, LLC &mdash; <span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://kanikahughley.com" target="_blank" rel="noopener">Hovera Group</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Privacy Policy" data-pt="Política de Privacidade">Privacy Policy</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Data Use Notice" data-pt="Aviso de Uso de Dados">Data Use Notice</a></div>
+<div style="text-align:center;padding-top:4px;font-size:11px;color:rgba(255,255,255,.25)">&copy; 2026 ADVanced Cleaning Services, LLC &mdash; <span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://hoveragroup.com" target="_blank" rel="noopener">Hovera Group</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Privacy Policy" data-pt="Política de Privacidade">Privacy Policy</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Data Use Notice" data-pt="Aviso de Uso de Dados">Data Use Notice</a></div>
 </footer>
 
 <!-- ===== COOKIE CONSENT BANNER ===== -->
