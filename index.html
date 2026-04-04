@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
 <meta name="description" content="ADVanced Cleaning Services, LLC — Professional residential and commercial cleaning in Tulsa, OK. Where Every Detail Is the Standard.">
 <!-- Open Graph / Social Sharing -->
 <meta property="og:type" content="website">
@@ -984,7 +988,7 @@ function setLang(lang){
   // Update all data-en / data-pt elements
   document.querySelectorAll('[data-en]').forEach(function(el){
     var val=lang==='pt'?el.getAttribute('data-pt'):el.getAttribute('data-en');
-    if(val)el.innerHTML=val;
+    if(val)el.innerHTML=val; // Safe: values are static HTML authored in source, never user input
   });
   // Toggle buttons
   document.getElementById('btnEN').classList.toggle('active',lang==='en');
