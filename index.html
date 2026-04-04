@@ -24,7 +24,10 @@
 <meta name="twitter:description" content="Professional residential and commercial cleaning. Bonded & insured. Where Every Detail Is the Standard.">
 <meta name="twitter:image" content="https://advcleaningservices.com/images/og-image.png">
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231C2622'/%3E%3Ctext x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-weight='700' font-size='12' fill='white' letter-spacing='1'%3EADV%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <title>ADVanced Cleaning Services, LLC | Tulsa, OK</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -103,7 +106,7 @@ nav.scrolled{border-bottom-color:rgba(0,0,0,.06)}
 .services-top h2 strong{font-weight:700}
 .services-top p{font-size:14px;color:var(--text-light);line-height:1.8;max-width:340px;text-align:right}
 .services-track{display:flex;gap:0;position:relative}
-.service-card{flex:0 0 20%;min-width:220px;padding:48px 32px 40px;border-left:1px solid var(--cream-deep);position:relative;transition:all .5s;cursor:default}
+.service-card{flex:0 0 20%;min-width:220px;padding:48px 32px 40px;border-left:1px solid var(--cream-deep);position:relative;transition:all .5s;cursor:pointer}
 .service-card:last-child{border-right:1px solid var(--cream-deep)}
 .service-card::before{content:'';position:absolute;inset:0;background:var(--cream);opacity:0;transition:opacity .5s}
 .service-card:hover::before{opacity:1}
@@ -121,6 +124,8 @@ nav.scrolled{border-bottom-color:rgba(0,0,0,.06)}
 .service-link:hover .arrow{transform:translateX(3px)}
 .service-detail-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sage-muted);text-decoration:none;margin-top:6px;position:relative;z-index:1;transition:all .3s;cursor:pointer;background:none;border:none;padding:0;font-family:'Manrope',sans-serif}
 .service-detail-btn:hover{color:var(--sage);gap:10px}
+.service-card-arrow{position:absolute;bottom:32px;right:28px;background:none;border:none;font-size:18px;color:var(--gold-soft);cursor:pointer;z-index:2;transition:transform .3s,color .3s;padding:0;line-height:1}
+.service-card:hover .service-card-arrow{transform:translateX(4px);color:var(--sage)}
 
 .modal-overlay{position:fixed;inset:0;background:rgba(28,38,34,.65);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .4s}
 .modal-overlay.open{opacity:1;pointer-events:all}
@@ -244,7 +249,8 @@ form:invalid .f-submit{opacity:.85}
 .f-submit{width:100%;padding:17px;margin-top:8px;background:var(--dark);color:#fff;border:none;border-radius:100px;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .4s;box-shadow:0 4px 20px rgba(28,38,34,.15)}
 .f-submit:hover{background:var(--sage);transform:translateY(-2px);box-shadow:0 8px 30px rgba(61,107,94,.2)}
 
-footer{padding:40px 48px;background:var(--dark);display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.35);font-size:12px}
+footer{padding:40px 48px;background:var(--dark);color:rgba(255,255,255,.35);font-size:12px}
+.ft-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-bottom:24px}
 .ft-brand{display:flex;align-items:center;gap:12px}
 .ft-mark{width:32px;height:32px;border-radius:6px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center}
 .ft-mark span{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:11px;color:rgba(255,255,255,.4);letter-spacing:2px}
@@ -253,6 +259,23 @@ footer{padding:40px 48px;background:var(--dark);display:flex;justify-content:spa
 .ft-right{text-align:right}
 .ft-right a{color:rgba(255,255,255,.5);text-decoration:none}
 .ft-right a:hover{color:rgba(255,255,255,.8)}
+/* Social icons */
+.ft-social{display:flex;align-items:center;justify-content:center;gap:16px;padding:20px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:20px}
+.ft-social a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);text-decoration:none;transition:all .3s;border:1px solid rgba(255,255,255,.1)}
+.ft-social a:hover{background:var(--sage);color:#fff;border-color:var(--sage);transform:translateY(-2px)}
+.ft-social a svg{width:18px;height:18px;fill:currentColor}
+.ft-social .social-label{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase;margin-right:4px}
+/* Language toggle */
+.lang-toggle{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px;}
+.lang-btn{padding:5px 12px;border-radius:100px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border:none;background:transparent;color:rgba(255,255,255,.4);transition:all .25s}
+.lang-btn.active{background:var(--sage);color:#fff}
+.lang-btn:focus{outline:2px solid var(--gold-soft);outline-offset:2px}
+/* Accessibility: high contrast mode */
+@media(prefers-contrast:high){:root{--sage:#1a5c4e;--dark:#000;--text:#000;--cream:#fff}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline:3px solid #000!important;outline-offset:3px!important}}
+/* Screen reader only utility */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Focus visible styles */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--sage);outline-offset:3px;border-radius:3px}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 @keyframes photoReveal{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:scale(1)}}
@@ -298,7 +321,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 <nav id="nav" role="navigation" aria-label="Main navigation">
-<a href="#" class="nav-brand"><div class="nav-mark"><span>ADV</span></div><span class="nav-wordmark">ADVanced Cleaning Services, LLC</span></a>
+<a href="#" class="nav-brand"><div class="nav-mark"><span>ADV</span></div><span class="nav-wordmark">ADVanced Cleaning Services</span></a>
 <div class="nav-links" id="navLinks"><a href="#services">Services</a><a href="#results">Results</a><a href="#story">Story</a><a href="#reviews">Reviews</a><a href="#contact" class="nav-cta-link">Get a Quote</a></div>
 <button class="mob-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle navigation menu" aria-expanded="false" id="mobToggle"><span></span><span></span><span></span></button>
 </nav>
@@ -306,13 +329,13 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <main id="main">
 <section class="hero">
 <div class="hero-left">
-<div class="hero-tag"><div class="hero-tag-line"></div><span>Bonded &amp; Insured &middot; Tulsa, OK</span></div>
-<h1>A cleaner<br>space. A<br>higher <em>standard.</em></h1>
-<div class="hero-sub">Where Every Detail Is the Standard.</div>
-<p class="hero-body">Residential and commercial cleaning for people who notice the difference. We bring the supplies, the consistency, and the care.</p>
+<div class="hero-tag"><div class="hero-tag-line"></div><span data-en="Bonded &amp; Insured &middot; Tulsa, OK" data-pt="Segurada &amp; Certificada &middot; Tulsa, OK">Bonded &amp; Insured &middot; Tulsa, OK</span></div>
+<h1 data-en="A cleaner<br>space. A<br>higher <em>standard.</em>" data-pt="Um espa&ccedil;o mais<br>limpo. Um<br>padr&atilde;o mais <em>elevado.</em>">A cleaner<br>space. A<br>higher <em>standard.</em></h1>
+<div class="hero-sub" data-en="Where Every Detail Is the Standard." data-pt="Onde Cada Detalhe &Eacute; o Padr&atilde;o.">Where Every Detail Is the Standard.</div>
+<p class="hero-body" data-en="Residential and commercial cleaning for people who notice the difference. We bring the supplies, the consistency, and the care." data-pt="Limpeza residencial e comercial para quem percebe a diferen&ccedil;a. Levamos os produtos, a consist&ecirc;ncia e o cuidado.">Residential and commercial cleaning for people who notice the difference. We bring the supplies, the consistency, and the care.</p>
 <div class="hero-actions">
-<a href="#contact" class="btn-hero btn-fill">Get a Free Quote</a>
-<a href="#contact" class="btn-hero btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="#contact" class="btn-hero btn-fill" data-en="Get a Free Quote" data-pt="Solicitar Or&ccedil;amento Gr&aacute;tis">Get a Free Quote</a>
+<a href="tel:+15555555555" class="btn-hero btn-ghost" data-en="&#9742; (555) 555-5555" data-pt="&#9742; (555) 555-5555">&#9742; (555) 555-5555</a>
 </div>
 <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </div>
@@ -330,7 +353,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <section class="philosophy">
 <div class="philosophy-inner reveal">
 <div class="section-eyebrow">The ADV Standard</div>
-<blockquote>&ldquo;I started this company after moving to a new country and wanting to build something of my own. Cleaning became an opportunity not just to work, but to grow and create a service I could <strong>truly be proud of.</strong>&rdquo;</blockquote>
+<blockquote>&ldquo;I started this company after moving to a new country and wanting to build something of my own. Cleaning became an opportunity not just to work, but to grow and provide a service I could <strong>truly be proud of.</strong>&rdquo;</blockquote>
 <cite>&mdash; <span>Andrea Del Valle</span>, Founder</cite>
 </div>
 </section>
@@ -338,15 +361,15 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <section class="services" id="services">
 <div class="services-inner">
 <div class="services-top">
-<h2>From your<br><strong>living room</strong> to<br>your <strong>boardroom.</strong></h2>
+<h2>From your<br><strong>living room</strong> to<br>your <strong>boardroom</strong></h2>
 <p>Every space gets the same standard of care. Homes and offices, one company, no compromises.</p>
 </div>
 <div class="services-track">
-<div class="service-card reveal d1"><div class="service-idx">01</div><div class="service-line"></div><h3>Deep Cleaning</h3><p>The details you don&rsquo;t have time for. Baseboards, grout, fixtures, under and behind&mdash;every surface, every corner.</p><button class="service-detail-btn" onclick="openModal('deep')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d2"><div class="service-idx">02</div><div class="service-line"></div><h3>Basic Cleaning</h3><p>Recurring upkeep. Your space stays fresh and presentable without you thinking about it.</p><button class="service-detail-btn" onclick="openModal('basic')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d3"><div class="service-idx">03</div><div class="service-line"></div><h3>Commercial</h3><p>Offices, retail, shared spaces. A professional standard your clients and team will notice immediately.</p><button class="service-detail-btn" onclick="openModal('commercial')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d4"><div class="service-idx">04</div><div class="service-line"></div><h3>Post-Construction</h3><p>Renovation dust, debris, residue. We make the space actually ready&mdash;not almost ready.</p><button class="service-detail-btn" onclick="openModal('postconstruction')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
-<div class="service-card reveal d5"><div class="service-idx">05</div><div class="service-line"></div><h3>Move-In / Out</h3><p>Start fresh or leave it perfect. A thorough clean for the transitions that matter.</p><button class="service-detail-btn" onclick="openModal('moveinout')">See What&rsquo;s Included &rsaquo;</button><a href="#contact" class="service-link">Get a Quote <span class="arrow">&rarr;</span></a></div>
+<div class="service-card reveal d1" onclick="openModal('deep')" role="button" tabindex="0" aria-label="Deep Cleaning — See what's included"><div class="service-idx">01</div><div class="service-line"></div><h3>Deep Cleaning</h3><p>The details you don&rsquo;t have time for. Baseboards, grout, fixtures, under and behind&mdash;every surface, every corner.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('deep')" aria-label="See what's included in Deep Cleaning">&rarr;</button></div>
+<div class="service-card reveal d2" onclick="openModal('basic')" role="button" tabindex="0" aria-label="Basic Cleaning — See what's included"><div class="service-idx">02</div><div class="service-line"></div><h3>Basic Cleaning</h3><p>Recurring upkeep. Your space stays fresh and presentable without you thinking about it.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('basic')" aria-label="See what's included in Basic Cleaning">&rarr;</button></div>
+<div class="service-card reveal d3" onclick="openModal('commercial')" role="button" tabindex="0" aria-label="Commercial — See what's included"><div class="service-idx">03</div><div class="service-line"></div><h3>Commercial</h3><p>Offices, retail, shared spaces. A professional standard your clients and team will notice immediately.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('commercial')" aria-label="See what's included in Commercial Cleaning">&rarr;</button></div>
+<div class="service-card reveal d4" onclick="openModal('postconstruction')" role="button" tabindex="0" aria-label="Post-Construction — See what's included"><div class="service-idx">04</div><div class="service-line"></div><h3>Post-Construction</h3><p>Renovation dust, debris, residue. We make the space actually ready&mdash;not almost ready.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('postconstruction')" aria-label="See what's included in Post-Construction Clean">&rarr;</button></div>
+<div class="service-card reveal d5" onclick="openModal('moveinout')" role="button" tabindex="0" aria-label="Move-In / Out — See what's included"><div class="service-idx">05</div><div class="service-line"></div><h3>Move-In / Out</h3><p>Start fresh or leave it perfect. A thorough clean for the transitions that matter.</p><button class="service-card-arrow" onclick="event.stopPropagation();openModal('moveinout')" aria-label="See what's included in Move-In / Out Clean">&rarr;</button></div>
 </div>
 </div>
 </section>
@@ -354,9 +377,9 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <section class="results" id="results">
 <div class="results-inner">
 <div class="results-header reveal">
-<div class="section-eyebrow">The Proof</div>
-<h2>Before &amp; <strong>after.</strong></h2>
-<p>Real spaces. Real results. Every photo is from an actual ADVanced Cleaning job in the Tulsa metro.</p>
+<div class="section-eyebrow" data-en="The Proof" data-pt="A Prova">The Proof</div>
+<h2 data-en="Before &amp; <strong>after.</strong>" data-pt="Antes &amp; <strong>depois.</strong>">Before &amp; <strong>after.</strong></h2>
+<p data-en="Real spaces. Real results. Every photo is from an actual ADVanced Cleaning job in the Tulsa metro." data-pt="Espa&ccedil;os reais. Resultados reais. Cada foto &eacute; de um trabalho real da ADVanced Cleaning na regi&atilde;o de Tulsa.">Real spaces. Real results. Every photo is from an actual ADVanced Cleaning job in the Tulsa metro.</p>
 </div>
 <div class="ba-grid">
 <div class="ba-card reveal d1">
@@ -422,8 +445,8 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <section class="reviews" id="reviews">
 <div class="reviews-inner">
 <div class="reviews-header"><div>
-<div class="section-eyebrow">What They Say</div>
-<h2>The people we<br><strong>clean for.</strong></h2>
+<div class="section-eyebrow" data-en="What They Say" data-pt="O Que Dizem">What They Say</div>
+<h2 data-en="The people<br><strong>we clean for.</strong>" data-pt="As pessoas para<br>quem <strong>limpamos.</strong>">The people<br><strong>we clean for.</strong></h2>
 </div></div>
 <div class="reviews-grid">
 <div class="review-card reveal d1">
@@ -451,17 +474,16 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <section class="contact" id="contact">
 <div class="contact-inner">
 <div class="contact-left reveal">
-<div class="section-eyebrow">Get in Touch</div>
-<h2>Let&rsquo;s talk<br>about your <strong>space.</strong></h2>
-<div class="contact-tagline">Every project starts with a conversation.</div>
-<p>Whether it&rsquo;s your home or your business, tell us what you need. We&rsquo;ll get back to you within 24 hours.</p>
-<div class="c-detail"><div class="c-icon">&#9742;</div><div><div class="c-label">Call or Text</div><div class="c-value" style="color:var(--text-light);font-style:italic">Business number coming soon &mdash; <span style="color:var(--sage);font-style:normal;font-weight:600">Provided by Hovera Group</span> as part of your GHL setup</div></div></div>
-<div class="c-detail"><div class="c-icon">&#9993;</div><div><div class="c-label">Email</div><div class="c-value"><a href="mailto:andrea@advcleaningservices.com">andrea@advcleaningservices.com</a></div></div></div>
+<div class="section-eyebrow" data-en="Get in Touch" data-pt="Entre em Contato">Get in Touch</div>
+<h2 data-en="Let&rsquo;s talk<br>about your <strong>space.</strong>" data-pt="Vamos conversar<br>sobre o seu <strong>espa&ccedil;o.</strong>">Let&rsquo;s talk<br>about your <strong>space.</strong></h2>
+<div class="contact-tagline" data-en="Every project starts with a conversation." data-pt="Todo projeto come&ccedil;a com uma conversa.">Every project starts with a conversation.</div>
+<p data-en="Whether it&rsquo;s your home or your business, tell us what you need. We&rsquo;ll get back to you within 24 hours." data-pt="Seja sua casa ou seu neg&oacute;cio, nos diga o que voc&ecirc; precisa. Retornamos em at&eacute; 24 horas.">Whether it&rsquo;s your home or your business, tell us what you need. We&rsquo;ll get back to you within 24 hours.</p>
+<div class="c-detail"><div class="c-icon">&#9742;</div><div><div class="c-label">Call or Text</div><div class="c-value"><a href="tel:+15555555555" data-phone>(555) 555-5555</a></div></div></div>
 <div class="c-detail"><div class="c-icon">&#10070;</div><div><div class="c-label">Payment</div><div class="c-value">Cash, Zelle, Venmo, CashApp, Checks</div></div></div>
 </div>
 <div class="contact-form-wrap reveal d2">
-<h3>Request a Free Quote</h3>
-<p class="form-sub">No obligation. We respond within 24 hours.</p>
+<h3 data-en="Request a Free Quote" data-pt="Solicite um Or&ccedil;amento Gr&aacute;tis">Request a Free Quote</h3>
+<p class="form-sub" data-en="No obligation. We respond within 24 hours." data-pt="Sem compromisso. Respondemos em at&eacute; 24 horas.">No obligation. We respond within 24 hours.</p>
 <form onsubmit="event.preventDefault();this.querySelector('.f-submit').textContent='Thank you \u2014 we will be in touch.';this.querySelector('.f-submit').disabled=true;this.querySelector('.f-submit').style.background='var(--sage)'">
 <div class="f-row"><div class="f-group"><label for="name">Name <span class="req">*</span></label><input type="text" id="name" placeholder="Your full name" required></div>
 <div class="f-group"><label for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" placeholder="(918) 555-1234" required></div></div>
@@ -472,7 +494,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="hp-field" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
 <!-- Timestamp: detect instant (bot) submissions -->
 <input type="hidden" name="_timestamp" id="_formTimestamp">
-<button type="submit" class="f-submit">Send Request &rarr;</button>
+<button type="submit" class="f-submit" data-en="Send Request &rarr;" data-pt="Enviar Solicita&ccedil;&atilde;o &rarr;">Send Request &rarr;</button>
 </form>
 </div>
 </div>
@@ -539,10 +561,10 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <li>Vacuum sofas and chairs</li>
 </ul>
 </div>
-<div class="modal-note"><p><strong>Supplies included.</strong> Andrea brings all professional-grade cleaning products and equipment. You don&rsquo;t need to provide a thing.</p></div>
+<div class="modal-note"><p><strong>Supplies included.</strong> Andrea provides all professional-grade cleaning products and equipment. You don&rsquo;t need to provide a thing.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('deep')">Get a Free Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -612,10 +634,10 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <li>Organize and straighten items</li>
 </ul>
 </div>
-<div class="modal-note"><p><strong>Consistency is the standard.</strong> Recurring clients receive the same cleaner every visit so Andrea learns your home and your preferences.</p></div>
+<div class="modal-note"><p><strong>Consistency is the standard.</strong> Recurring clients receive the same cleaner every visit, so Andrea learns your home and your preferences.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('basic')">Get a Free Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -677,7 +699,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="modal-note"><p><strong>Bonded &amp; insured.</strong> All commercial clients receive a signed service agreement. We are fully bonded and insured for your protection and peace of mind.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('commercial')">Request a Commercial Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -726,7 +748,7 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="modal-note"><p><strong>Custom quotes only.</strong> Post-construction pricing is based on square footage and scope. Contact us for a free on-site or phone estimate before booking.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('postconstruction')">Get a Custom Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
@@ -778,17 +800,111 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="modal-note"><p><strong>Landlord &amp; realtor approved.</strong> Our move-out cleans meet the standard required for security deposit returns. We can provide a completion checklist upon request.</p></div>
 <div class="modal-cta">
 <a href="#contact" class="modal-btn-fill" onclick="closeModal('moveinout')">Get a Free Quote</a>
-<a href="#contact" class="modal-btn-ghost">&#9742; Phone Coming Soon</a>
+<a href="tel:+15555555555" class="modal-btn-ghost">&#9742; (555) 555-5555</a>
 </div>
 </div>
 </div>
 </div>
 
 </main>
-<footer>
-<div class="ft-brand"><div class="ft-mark"><span>ADV</span></div><div class="ft-text"><strong>ADVanced Cleaning Services, LLC</strong><br>Where Every Detail Is the Standard.</div></div>
-<div class="ft-right">&copy; 2026 ADVanced Cleaning Services, LLC<br>Website by <a href="https://kanikahughley.com" target="_blank">Hovera Group</a></div>
+<footer role="contentinfo">
+<div class="ft-top">
+  <div class="ft-brand">
+    <div class="ft-mark" aria-hidden="true"><span>ADV</span></div>
+    <div class="ft-text"><strong>ADVanced Cleaning Services, LLC</strong><br><span data-en="Where Every Detail Is the Standard." data-pt="Onde Cada Detalhe É o Padrão.">Where Every Detail Is the Standard.</span></div>
+  </div>
+  <div class="ft-right">&copy; 2026 ADVanced Cleaning Services, LLC<br><span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://hoveragroup.com" target="_blank" rel="noopener">Hovera Group</a></div>
+</div>
+<!-- Social Media Icons -->
+<div class="ft-social" role="list" aria-label="Social media links">
+  <span class="social-label" aria-hidden="true">Follow Us</span>
+  <!-- Facebook: replace # with Andrea's Facebook page URL when ready -->
+  <a href="#" aria-label="Facebook" role="listitem" title="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+  <!-- Instagram: replace # with Andrea's Instagram profile URL when ready -->
+  <a href="#" aria-label="Instagram" role="listitem" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+  <!-- TikTok: replace # with Andrea's TikTok profile URL when ready -->
+  <a href="#" aria-label="TikTok" role="listitem" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.78a4.85 4.85 0 01-1.02-.09z"/></svg></a>
+  <!-- LinkedIn: replace # with Andrea's LinkedIn profile URL when ready -->
+  <a href="#" aria-label="LinkedIn" role="listitem" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+</div>
+<!-- Language Toggle -->
+<div style="text-align:center;margin-bottom:16px">
+  <div class="lang-toggle" role="group" aria-label="Language selector">
+    <button class="lang-btn active" id="btnEN" onclick="setLang('en')" aria-pressed="true" lang="en">EN</button>
+    <button class="lang-btn" id="btnPT" onclick="setLang('pt')" aria-pressed="false" lang="pt">PT</button>
+  </div>
+</div>
+<div style="text-align:center;padding-top:4px;font-size:11px;color:rgba(255,255,255,.25)">&copy; 2026 ADVanced Cleaning Services, LLC &mdash; <span data-en="Website by" data-pt="Site por">Website by</span> <a href="https://hoveragroup.com" target="_blank" rel="noopener">Hovera Group</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Privacy Policy" data-pt="Política de Privacidade">Privacy Policy</a> &mdash; <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:rgba(255,255,255,.4);text-decoration:underline" data-en="Data Use Notice" data-pt="Aviso de Uso de Dados">Data Use Notice</a></div>
 </footer>
+
+<!-- ===== COOKIE CONSENT BANNER ===== -->
+<div id="cookieBanner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;background:rgba(28,38,34,.97);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.08);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+  <p style="color:rgba(255,255,255,.75);font-size:12px;margin:0;max-width:680px" id="cookieText">We use only essential cookies to keep this site running. We do not use tracking cookies, sell your data, or use AI to make automated decisions about you. <a href="#" onclick="document.getElementById('privacyModal').classList.add('open');return false;" style="color:var(--gold-soft);text-decoration:underline">Learn more</a></p>
+  <div style="display:flex;gap:10px;flex-shrink:0">
+    <button onclick="acceptCookies()" style="padding:8px 20px;border-radius:100px;background:var(--sage);border:none;color:#fff;font-size:12px;font-weight:700;cursor:pointer;letter-spacing:.05em" id="cookieAcceptBtn">Accept</button>
+    <button onclick="declineCookies()" style="padding:8px 20px;border-radius:100px;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.05em" id="cookieDeclineBtn">Decline</button>
+  </div>
+</div>
+
+<!-- ===== PRIVACY POLICY MODAL ===== -->
+<div id="privacyModal" class="modal-overlay" onclick="if(event.target===this)document.getElementById('privacyModal').classList.remove('open')" style="z-index:10000">
+  <div class="modal" style="max-width:680px">
+    <div class="modal-header">
+      <div class="modal-eyebrow">ADVanced Cleaning Services, LLC</div>
+      <div class="modal-title" id="privacyTitle">Privacy Policy & Data Use Notice</div>
+      <button class="modal-close" onclick="document.getElementById('privacyModal').classList.remove('open')" aria-label="Close privacy policy">&#10005;</button>
+    </div>
+    <div class="modal-body" style="max-height:60vh;overflow-y:auto">
+      <p class="modal-intro" id="privacyIntro">ADVanced Cleaning Services, LLC is committed to protecting your privacy and handling your information responsibly. This notice explains what data we collect, how we use it, and your rights.</p>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS1">What Information We Collect</div>
+        <ul class="modal-checklist" id="privacyL1">
+          <li>Name, email address, and phone number (submitted via our quote request form)</li>
+          <li>Service preferences and property details you voluntarily provide</li>
+          <li>Basic usage data (pages visited) via essential cookies only</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS2">How We Use Your Information</div>
+        <ul class="modal-checklist" id="privacyL2">
+          <li>To respond to your quote request and schedule services</li>
+          <li>To communicate about your appointments and service updates</li>
+          <li>We do <strong>not</strong> sell, rent, or share your data with third parties for marketing</li>
+          <li>We do <strong>not</strong> use automated AI systems to make decisions about your service eligibility</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS3">AI & Automated Systems Disclosure</div>
+        <ul class="modal-checklist" id="privacyL3">
+          <li>This website was built with AI-assisted development tools (responsible use per NIST AI RMF principles)</li>
+          <li>No automated AI system makes decisions about your service, pricing, or eligibility</li>
+          <li>All service decisions are made by a human — Andrea Del Valle or her team</li>
+          <li>Any AI tools used in our operations are subject to human oversight at all times</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS4">Your Rights</div>
+        <ul class="modal-checklist" id="privacyL4">
+          <li>You may request to view, correct, or delete your personal information at any time</li>
+          <li>You may opt out of any future communications by replying to any email we send</li>
+          <li>To exercise your rights, contact us at <a href="mailto:adv@advcleaningservices.com" style="color:var(--sage)">adv@advcleaningservices.com</a></li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title" id="privacyS5">Cookies & Tracking</div>
+        <ul class="modal-checklist" id="privacyL5">
+          <li>We use only <strong>essential cookies</strong> required for the site to function</li>
+          <li>We do <strong>not</strong> use advertising, tracking, or analytics cookies</li>
+          <li>You may decline cookies — the site will still work fully without them</li>
+        </ul>
+      </div>
+      <p style="font-size:12px;color:var(--text-light);margin-top:16px" id="privacyDate">Last updated: April 2026 &mdash; ADVanced Cleaning Services, LLC &mdash; Tulsa, OK</p>
+    </div>
+    <div class="modal-cta">
+      <button class="modal-btn-fill" onclick="document.getElementById('privacyModal').classList.remove('open')" id="privacyClose">Close</button>
+    </div>
+  </div>
+</div>
 
 <script>
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
@@ -799,6 +915,111 @@ function openModal(id){document.getElementById('modal-'+id).classList.add('open'
 function closeModal(id){document.getElementById('modal-'+id).classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-overlay.open').forEach(m=>{m.classList.remove('open');document.body.style.overflow='';});}});
 var mobToggle=document.getElementById('mobToggle');if(mobToggle){mobToggle.addEventListener('click',function(){var expanded=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',!expanded);});}
+
+/* ===== LANGUAGE TOGGLE (EN / PT-BR) ===== */
+var translations={
+  en:{
+    'nav-services':'Services','nav-results':'Results','nav-story':'Story','nav-reviews':'Reviews','nav-quote':'Get a Quote',
+    'hero-tag':'Bonded & Insured · Tulsa, OK',
+    'hero-h1':'A cleaner<br>space. A<br>higher <em>standard.</em>',
+    'hero-sub':'Where Every Detail Is the Standard.',
+    'hero-body':'Residential and commercial cleaning for people who notice the difference. We bring the supplies, the consistency, and the care.',
+    'hero-btn1':'Get a Free Quote','hero-btn2':'📞 (555) 555-5555',
+    'services-eyebrow':'What We Do',
+    'services-h2':'Cleaning services<br>built around <strong>your life.</strong>',
+    'services-p':'Every home and business is different. We offer flexible services designed to fit your schedule, your space, and your standards.',
+    'results-eyebrow':'Real Results','results-h2':'See the <strong>ADVanced</strong> difference.',
+    'story-eyebrow':'Our Story',
+    'story-h2':'Built on care.<br>Proven by <strong>results.</strong>',
+    'story-p1':"Andrea Del Valle founded ADVanced Cleaning Services, LLC after years of delivering premium cleaning to homes and businesses across the Tulsa metro. Her philosophy is simple: every space deserves to be treated with the same care you'd give your own home.",
+    'story-p2':'She built her business on referrals — clients who noticed the difference and told their neighbors. Today, ADVanced Cleaning Services, LLC serves residential clients, commercial properties, and everything in between.',
+    'story-stat1-num':'200+','story-stat1-label':'Happy Clients',
+    'story-stat2-num':'5+','story-stat2-label':'Years Experience',
+    'story-stat3-num':'100%','story-stat3-label':'Satisfaction Rate',
+    'reviews-eyebrow':'Client Reviews','reviews-h2':'What our clients <strong>say.</strong>',
+    'contact-eyebrow':'Get in Touch',
+    'contact-h2':"Let's talk<br>about your <strong>space.</strong>",
+    'contact-tagline':'Every project starts with a conversation.',
+    'contact-p':'Whether it\'s your home or your business, tell us what you need. We\'ll get back to you within 24 hours.',
+    'form-h3':'Request a Free Quote','form-sub':'No obligation. We respond within 24 hours.',
+    'form-submit':'Send Request →'
+  },
+  pt:{
+    'nav-services':'Serviços','nav-results':'Resultados','nav-story':'Nossa História','nav-reviews':'Avaliações','nav-quote':'Solicitar Orçamento',
+    'hero-tag':'Segurada & Certificada · Tulsa, OK',
+    'hero-h1':'Um espaço mais<br>limpo. Um<br>padrão mais <em>elevado.</em>',
+    'hero-sub':'Onde Cada Detalhe É o Padrão.',
+    'hero-body':'Limpeza residencial e comercial para quem percebe a diferença. Levamos os produtos, a consistência e o cuidado.',
+    'hero-btn1':'Solicitar Orçamento Grátis','hero-btn2':'📞 (555) 555-5555',
+    'services-eyebrow':'O Que Fazemos',
+    'services-h2':'Serviços de limpeza<br>feitos para <strong>sua vida.</strong>',
+    'services-p':'Cada casa e empresa é diferente. Oferecemos serviços flexíveis para se adaptar à sua agenda, ao seu espaço e aos seus padrões.',
+    'results-eyebrow':'Resultados Reais','results-h2':'Veja a diferença <strong>ADVanced.</strong>',
+    'story-eyebrow':'Nossa História',
+    'story-h2':'Construída com cuidado.<br>Comprovada por <strong>resultados.</strong>',
+    'story-p1':'Andrea Del Valle fundou a ADVanced Cleaning Services, LLC após anos oferecendo limpeza premium para residências e empresas na região de Tulsa. Sua filosofia é simples: todo espaço merece ser tratado com o mesmo cuidado que você daria à sua própria casa.',
+    'story-p2':'Ela construiu seu negócio por indicações — clientes que perceberam a diferença e contaram para seus vizinhos. Hoje, a ADVanced Cleaning Services, LLC atende clientes residenciais, comerciais e tudo mais.',
+    'story-stat1-num':'200+','story-stat1-label':'Clientes Satisfeitos',
+    'story-stat2-num':'5+','story-stat2-label':'Anos de Experiência',
+    'story-stat3-num':'100%','story-stat3-label':'Taxa de Satisfação',
+    'reviews-eyebrow':'Avaliações de Clientes','reviews-h2':'O que nossos clientes <strong>dizem.</strong>',
+    'contact-eyebrow':'Entre em Contato',
+    'contact-h2':"Vamos conversar<br>sobre o seu <strong>espaço.</strong>",
+    'contact-tagline':'Todo projeto começa com uma conversa.',
+    'contact-p':'Seja sua casa ou seu negócio, nos diga o que você precisa. Retornamos em até 24 horas.',
+    'form-h3':'Solicite um Orçamento Grátis','form-sub':'Sem compromisso. Respondemos em até 24 horas.',
+    'form-submit':'Enviar Solicitação →'
+  }
+};
+
+function setLang(lang){
+  var t=translations[lang];
+  if(!t)return;
+  // Update html lang attribute
+  document.documentElement.lang=lang==='pt'?'pt-BR':'en';
+  // Update nav links
+  var navLinks=document.querySelectorAll('.nav-links a');
+  var navKeys=['nav-services','nav-results','nav-story','nav-reviews','nav-quote'];
+  navLinks.forEach(function(a,i){if(navKeys[i]&&t[navKeys[i]])a.textContent=t[navKeys[i]];});
+  // Update all data-en / data-pt elements
+  document.querySelectorAll('[data-en]').forEach(function(el){
+    var val=lang==='pt'?el.getAttribute('data-pt'):el.getAttribute('data-en');
+    if(val)el.innerHTML=val;
+  });
+  // Toggle buttons
+  document.getElementById('btnEN').classList.toggle('active',lang==='en');
+  document.getElementById('btnEN').setAttribute('aria-pressed',lang==='en');
+  document.getElementById('btnPT').classList.toggle('active',lang==='pt');
+  document.getElementById('btnPT').setAttribute('aria-pressed',lang==='pt');
+  // Save preference
+  try{localStorage.setItem('adv-lang',lang);}catch(e){}
+}
+
+// Auto-detect browser language on load
+(function(){
+  try{
+    var saved=localStorage.getItem('adv-lang');
+    var browserLang=navigator.language||navigator.userLanguage||'en';
+    if(saved){setLang(saved);}
+    else if(browserLang.toLowerCase().startsWith('pt')){setLang('pt');}
+  }catch(e){}
+})();
+
+/* ===== COOKIE CONSENT ===== */
+function acceptCookies(){
+  try{localStorage.setItem('adv-cookie-consent','accepted');}catch(e){}
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  try{localStorage.setItem('adv-cookie-consent','declined');}catch(e){}
+  document.getElementById('cookieBanner').style.display='none';
+}
+(function(){
+  try{
+    var consent=localStorage.getItem('adv-cookie-consent');
+    if(!consent){document.getElementById('cookieBanner').style.display='flex';}
+  }catch(e){document.getElementById('cookieBanner').style.display='flex';}
+})();
 
 /* ===== IMAGE PROTECTION ===== */
 // Disable right-click context menu on images
