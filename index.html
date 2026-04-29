@@ -33,6 +33,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://advcleaningservices.com">
 <title>ADVanced Cleaning Services | Tulsa, OK</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -513,6 +514,8 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
   data-layout-iframe-id="inline-DjXXH9U2oW4owq6DoniA"
   data-form-id="DjXXH9U2oW4owq6DoniA"
   title="ADV Website - Quote Request"
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
 ></iframe>
 <script src="https://api.growthhub365.com/js/form_embed.js"></script>
 </div>
@@ -1005,49 +1008,9 @@ document.addEventListener('contextmenu',function(e){
   });
 })();
 
-/* ===== FORM BOT PROTECTION ===== */
-// Set timestamp when page loads — instant submissions are bots
-var tsField=document.getElementById('_formTimestamp');
-if(tsField)tsField.value=Date.now();
-
-// Rate limiting: block more than 3 submissions in 10 minutes
-var submitCount=0;
-var lastReset=Date.now();
-var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/qRqNxCv6Xu8i2EPqY473/webhook-trigger/056833c0-ab4e-4c4b-9ccd-fb05995d9436';
-var quoteForm=document.getElementById('quoteForm');
-if(quoteForm){
-  quoteForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    // Check honeypot
-    var hp=this.querySelector('input[name="_gotcha"]');
-    if(hp&&hp.value!==''){return false;}
-    // Check timestamp (block if submitted in under 3 seconds — bot speed)
-    var ts=parseInt(document.getElementById('_formTimestamp').value||0);
-    if(Date.now()-ts<3000){return false;}
-    // Rate limit
-    if(Date.now()-lastReset>600000){submitCount=0;lastReset=Date.now();}
-    submitCount++;
-    if(submitCount>3){
-      var btn=this.querySelector('.f-submit');
-      if(btn){btn.textContent='Too many requests. Please try again later.';btn.disabled=true;}
-      return false;
-    }
-    var btn=this.querySelector('.f-submit');
-    btn.textContent='Sending…';btn.disabled=true;
-    var payload={
-      firstName:document.getElementById('name').value.split(' ')[0]||'',
-      lastName:document.getElementById('name').value.split(' ').slice(1).join(' ')||'',
-      name:document.getElementById('name').value,
-      phone:document.getElementById('phone').value,
-      email:document.getElementById('email').value,
-      service_type:document.getElementById('type').value,
-      message:document.getElementById('details').value,
-      source:'advcleaningservices.com'
-    };
-    fetch(GHL_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-      .then(function(){btn.textContent='Thank you — we will be in touch.';btn.style.background='var(--sage)';quoteForm.reset();})
-      .catch(function(){btn.textContent='Thank you — we will be in touch.';btn.style.background='var(--sage)';btn.disabled=false;});
-  });
-}</script>
+/* ===== FORM: GHL NATIVE EMBED =====
+   Quote form is handled by GoHighLevel native iframe embed above.
+   Bot protection, rate limiting, and lead routing are managed by GHL.
+   No webhook URL or form credentials are stored in client-side code. */</script>
 </body>
 </html>
