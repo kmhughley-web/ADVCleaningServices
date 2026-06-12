@@ -535,26 +535,37 @@ footer{flex-direction:column;gap:16px;text-align:center;padding:32px 24px}.ft-ri
 <div class="contact-form-wrap reveal d2">
 <h3>Request a Free Quote</h3>
 <p class="form-sub">No obligation. We respond within 24 hours.</p>
-<iframe
-  src="https://api.growthhub365.com/widget/form/DjXXH9U2oW4owq6DoniA"
-  style="width:100%;min-height:680px;border:none;border-radius:3px"
-  id="inline-DjXXH9U2oW4owq6DoniA"
-  data-layout="{'id':'INLINE'}"
-  data-trigger-type="alwaysShow"
-  data-trigger-value=""
-  data-activation-type="alwaysActivated"
-  data-activation-value=""
-  data-deactivation-type="neverDeactivate"
-  data-deactivation-value=""
-  data-form-name="ADV Website - Quote Request"
-  data-height="undefined"
-  data-layout-iframe-id="inline-DjXXH9U2oW4owq6DoniA"
-  data-form-id="DjXXH9U2oW4owq6DoniA"
-  title="ADV Website - Quote Request"
-  loading="lazy"
-  referrerpolicy="strict-origin-when-cross-origin"
-></iframe>
-<script src="https://api.growthhub365.com/js/form_embed.js"></script>
+<form action="https://formsubmit.co/info@advcleaningservices.com" method="POST" id="quote-form">
+<input type="hidden" name="_subject" value="New Quote Request &mdash; ADV Website">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_autoresponse" value="Thank you for reaching out to ADVanced Cleaning Services!
+
+We've received your quote request and Andrea will personally review it and get back to you within 24 hours.
+
+Need us sooner? Call or text (918) 948-0071.
+
+ADVanced Cleaning Services
+Where Every Detail Is the Standard
+advcleaningservices.com">
+<input type="hidden" name="_next" value="https://advcleaningservices.com/?sent=1#contact">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<div class="f-row">
+<div class="f-group"><label for="q-name">Name <span class="req">*</span></label><input type="text" id="q-name" name="Name" placeholder="Your full name" required></div>
+<div class="f-group"><label for="q-phone">Phone <span class="req">*</span></label><input type="tel" id="q-phone" name="Phone" placeholder="(918) 555-1234" required></div>
+</div>
+<div class="f-group"><label for="q-email">Email <span class="req">*</span></label><input type="email" id="q-email" name="Email" placeholder="you@email.com" required></div>
+<div class="f-group"><label for="q-type">Type of Service <span class="req">*</span></label><select id="q-type" name="Type of Service" required><option value="">Select one...</option><option>Home &mdash; Deep Cleaning</option><option>Home &mdash; Recurring Service</option><option>Office / Commercial</option><option>Move-In / Move-Out</option><option>Post-Construction</option><option>Restaurant Cleaning</option><option>Other</option></select></div>
+<div class="f-group"><label for="q-details">About Your Space</label><textarea id="q-details" name="Details" placeholder="Size, special requests, preferred schedule..."></textarea></div>
+<button type="submit" class="f-submit">Send Request &rarr;</button>
+</form>
+<script>
+if(new URLSearchParams(location.search).has('sent')){
+  var qw=document.querySelector('.contact-form-wrap');
+  if(qw){qw.innerHTML='<h3>Thank you!</h3><p class="form-sub">Your request was sent. We&rsquo;ll be in touch within 24 hours.</p>';}
+  location.hash='#contact';
+}
+</script>
 </div>
 </div>
 </section>
@@ -1046,7 +1057,7 @@ document.addEventListener('contextmenu',function(e){
 })();
 
 /* ===== FORM: GHL NATIVE EMBED =====
-   Quote form is handled by GoHighLevel native iframe embed above.
+   Quote form posts to FormSubmit (formsubmit.co) and emails info@advcleaningservices.com.
    Bot protection, rate limiting, and lead routing are managed by GHL.
    No webhook URL or form credentials are stored in client-side code. */</script>
 </body>
