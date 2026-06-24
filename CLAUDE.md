@@ -180,18 +180,8 @@ History uses short, conventional-ish prefixes when applicable and plain descript
 subjects otherwise — e.g. `fix:`, `feat:`, `security:`, `remove:`. Match that tone. Keep
 messages specific about what changed (the existing log is a good model).
 
-## ⚠️ Known issue at time of writing
-
-The most recent commit on the working branch (`89c65e7`, "Update Restaurant Daily
-Maintenance description") **accidentally truncated `index.html`** from ~1053 lines to 26
-lines — it deleted the entire `<head>` tail, `<style>`, `<body>`, and `<script>`, leaving
-only a broken partial `<head>`. The full, intended version is preserved in the previous
-commit (`89c65e7~1`, a.k.a. `99870c6`). To restore it:
-
-```bash
-git checkout 99870c6 -- index.html
-```
-
-This `CLAUDE.md` documents the site's **intended/full** structure (from the last good
-commit), not the truncated stub. If you're asked to work on the site, restore `index.html`
-first.
+> **History note:** commit `89c65e7` ("Update Restaurant Daily Maintenance description")
+> accidentally truncated `index.html` from ~1053 lines to 26 (deleting `<style>`,
+> `<body>`, and `<script>`). It was restored from the last good commit `99870c6` via
+> `git checkout 99870c6 -- index.html`. If you ever see `index.html` as a tiny partial
+> `<head>` stub again, that's the same regression — restore from the last full version.
