@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Internal review tool — not part of the public site
+Disallow: /feedback.html
+
+Sitemap: https://advcleaningservices.com/sitemap.xml
