@@ -157,6 +157,18 @@ CSP-governed behavior won't behave like production.
 
 ## Conventions for making changes
 
+- **Always verify after every change (do not skip this).** Before committing, sanity-check
+  the edit:
+  - HTML structure is balanced — `<style>`/`</style>` 1:1, `<section>`/`</section>` equal,
+    and (if touched) `<details>`, modal overlays, and `<script>` tags balanced. A quick
+    `grep -c` on the opening/closing tags catches the truncation-class regressions.
+  - Any JSON-LD you edit still parses as valid JSON (e.g. pipe the `<script
+    type="application/ld+json">` block through `python3 -c 'import json,sys;json.load(...)'`).
+  - Image/asset `src` paths resolve to files that exist in `images/`.
+  - After deploy, confirm the live page loads the full body (not a stub) and, for SEO/schema
+    changes, run it through Google's Rich Results Test. NOTE: some sandboxes block outbound
+    requests to `advcleaningservices.com` (proxy 403) — if so, verify the deployed source on
+    `origin/main` and have the user confirm the live URL in a browser.
 - **Edit `index.html` in place.** Keep styles in the inline `<style>` block and scripts in
   the inline `<script>` block — do not extract separate `.css`/`.js` files or add a build
   system unless explicitly requested.
